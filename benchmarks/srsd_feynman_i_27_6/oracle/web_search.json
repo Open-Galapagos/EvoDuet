@@ -1,0 +1,24 @@
+[
+  {
+    "function_name": "srsd_feynman_i_27_6",
+    "function_description": "Recover the reciprocal-distance dependence of focal distance from three inputs.",
+    "web_search_query": "Feynman I 27.6 geometrical optics focal distance",
+    "evidence_level": "direct",
+    "response": {
+      "query": "Feynman I 27.6 geometrical optics focal distance",
+      "results": [
+        {
+          "url": "https://www.feynmanlectures.caltech.edu/I_27.html#Eq:I:27:6",
+          "title": "The Feynman Lectures on Physics, Volume I, Chapter 27: Geometrical Optics",
+          "content": "Equation (27.6) gives 1/s+n/s'=1/f.",
+          "raw_content": "\\begin{equation} \\label{Eq:I:27:6} 1/s+n/s'=1/f. \\end{equation}\n",
+          "raw_content_truncated": true,
+          "relevance_score": 1,
+          "helpfulness_score": 1,
+          "id": "srsd_feynman_i_27_6:feynman"
+        }
+      ]
+    }
+  }
+]
+

@@ -1,0 +1,22 @@
+[
+  {
+    "function_name": "pressure_vessel_design",
+    "function_description": "Improve the task solution using the cited public evidence.",
+    "web_search_query": "Yang et al. — Pressure vessel global optimum, equations 6, 20–21",
+    "evidence_level": "direct",
+    "response": {
+      "results": [
+        {
+          "title": "Yang et al. — Pressure vessel global optimum, equations 6, 20–21",
+          "content": "The paper gives the optimum design vector (0.8125, 0.4375, 42.0984455958549, 176.6365958424394), with minimum cost 6059.714335048436. Equation 20 gives L = K/(pi R^2) - 4R/3.",
+          "raw_content": "{\\mbox{\\boldmath$x$}}_{*}=(0.8125,\\;0.4375,\n\n\\qquad 42.0984455958549,\\;176.6365958424394).\n\nL_{*}=\\frac{K}{\\pi R_{*}^{2}}-\\frac{4R_{*}}{3}=176.6365958424394.\n\nf_{\\min}=6059.714335048436.",
+          "raw_content_truncated": true,
+          "url": "https://arxiv.org/html/1403.7793",
+          "id": "pressure_vessel_design:pressure",
+          "relevance_score": 1.0,
+          "helpfulness_score": 1.0
+        }
+      ]
+    }
+  }
+]

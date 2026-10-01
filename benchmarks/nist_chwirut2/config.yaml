@@ -1,0 +1,39 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+checkpoint_interval: 5
+max_solution_length: 40000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: gpt-5
+      weight: 1.0
+  max_tokens: 16384
+  timeout: 600
+prompt:
+  system_message: |
+    Solve NIST StRD's public Chwirut2 nonlinear least-squares problem.
+    It contains 54 observed pairs from an ultrasonic calibration study.
+    Implement solve(payload), where payload contains equal-length lists x
+    (metal distance) and y (ultrasonic response). Return [b1, b2, b3], three
+    finite real coefficients for f(x) = exp(-b1*x)/(b2+b3*x).
+
+    Minimize the unweighted residual sum of squares:
+        RSS = sum((f(x_i)-y_i)**2), over all 54 published observations.
+    The evaluator independently computes RSS from the returned coefficients.
+    It reports RSS and min(1, 513.04802941/RSS). Boolean coefficients, wrong
+    shapes, singular denominators and nonfinite results are invalid.
+    The initial program returns the published NIST Start 1 [0.1, 0.01, 0.02].
+
+    This is one fixed public regression-fit task. All 54 observations are
+    supplied to the program and scored; there is no held-out prediction set.
+    Preserve the solve signature and EVOLVE-BLOCK markers. NumPy and SciPy
+    are available. The candidate has 30 seconds per evaluation.
+    Do not read reference files, modify evaluator files, use network access,
+    or return a claimed score in place of model coefficients.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: false

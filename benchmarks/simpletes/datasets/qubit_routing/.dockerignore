@@ -1,0 +1,5 @@
+# Keep host-side build products and caches out of the image (and out of the
+# docker layer cache key): the Dockerfile warms rust/.cargo_target itself.
+swap_reduction/rust/.cargo_target/
+swap_reduction/rust/target/
+**/__pycache__/

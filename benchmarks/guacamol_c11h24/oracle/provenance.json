@@ -1,0 +1,40 @@
+{
+  "collection": "Curated query labels and faithful summaries of primary documents fetched directly over HTTP during registration. No search-provider or model API was called.",
+  "scores": "Relevance and helpfulness are curator labels, not measured document benefit.",
+  "default_evidence_level": "inferential",
+  "evidence_limit": "The documents provide formula-constrained structure generation and nonisomorphic-tree enumeration methods. They do not list all C11H24 answers or state the task-specific carbon-tree construction.",
+  "documents": [
+    {
+      "id": "maygen:README",
+      "url": "https://raw.githubusercontent.com/MehmetAzizYirik/MAYGEN/master/README.md",
+      "resolved_url": "https://raw.githubusercontent.com/MehmetAzizYirik/MAYGEN/master/README.md",
+      "fetched_at": "2026-09-09T03:15:26.055453+00:00",
+      "http_status": 200,
+      "response_bytes": 6768,
+      "response_sha256": "034bc7a98f5a663c0af325262b85ebde8f8e6dfac53e70e9eb40299c6011b953",
+      "retained_file": "oracle/sources/maygen_readme.md",
+      "license": "MIT",
+      "title": "MAYGEN: a chemical structure generator for constitutional isomers",
+      "evidence_level": "inferential",
+      "raw_content_sha256": "034bc7a98f5a663c0af325262b85ebde8f8e6dfac53e70e9eb40299c6011b953",
+      "raw_content_truncated": false,
+      "selection": "Entire fetched UTF-8 source document, retained without paraphrase."
+    },
+    {
+      "id": "networkx:nonisomorphic_trees",
+      "url": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.3/networkx/generators/nonisomorphic_trees.py",
+      "resolved_url": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.3/networkx/generators/nonisomorphic_trees.py",
+      "fetched_at": "2026-09-09T03:15:26.056244+00:00",
+      "http_status": 200,
+      "response_bytes": 6453,
+      "response_sha256": "804eee3c1fae684eab11f6a29a647d6eaa1bb28e727257021babbccf06654b8f",
+      "retained_file": "oracle/sources/networkx_nonisomorphic_trees.py",
+      "license": "BSD-3-Clause",
+      "title": "NetworkX 3.3: implementation and documentation of nonisomorphic_trees",
+      "evidence_level": "inferential",
+      "raw_content_sha256": "804eee3c1fae684eab11f6a29a647d6eaa1bb28e727257021babbccf06654b8f",
+      "raw_content_truncated": false,
+      "selection": "Entire fetched UTF-8 source document, retained without paraphrase."
+    }
+  ]
+}

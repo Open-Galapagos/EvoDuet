@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="246" viewBox="0 0 800 246" role="img" aria-labelledby="title desc">
+<title id="title">EvoDuet: bi-level co-evolution of solutions and web-search queries</title>
+<desc id="desc">Solutions guide web-search queries, which retrieve evidence from arXiv, GitHub code, and web documents over three rounds. Selected evidence flows back to improve the solutions. Each box grows once per cycle.</desc>
+<defs><linearGradient id="coupling"><stop stop-color="#7A5FC4"/><stop offset="1" stop-color="#3F78C0"/></linearGradient></defs>
+<rect width="800" height="246" fill="#FFFFFF"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<g data-flow="solution-to-query">
+<path d="M 202.000 106.000 C 202.000 62.000 358.101 87.101 378.101 107.101 M 376.545 101.585 L 378.101 107.101 L 372.585 105.545" fill="none" stroke="url(#coupling)" stroke-width="2.0" opacity="0.4500" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-flow="selected-evidence">
+<path d="M 504.000 152.000 C 504.000 214.000 202.000 214.000 202.000 155.000 M 199.200 160.000 L 202.000 155.000 L 204.800 160.000" fill="none" stroke="url(#coupling)" stroke-width="2.0" opacity="0.4000" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path d="M 388.000 54.000 C 388.000 78.500 427.800 78.500 427.800 103.000 M 430.600 98.000 L 427.800 103.000 L 425.000 98.000" fill="none" stroke="#3F78C0" stroke-width="1.5" opacity="0.3000" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 504.000 54.000 C 504.000 78.500 504.000 78.500 504.000 103.000 M 506.800 98.000 L 504.000 103.000 L 501.200 98.000" fill="none" stroke="#3F78C0" stroke-width="1.5" opacity="0.3000" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 636.000 54.000 C 636.000 78.500 580.200 78.500 580.200 103.000 M 583.000 98.000 L 580.200 103.000 L 577.400 98.000" fill="none" stroke="#3F78C0" stroke-width="1.5" opacity="0.3000" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="348" y="20" width="80" height="34" rx="8" fill="#f4f6fa"/>
+<g transform="translate(358.000 37.000) scale(0.8000)" fill="none" stroke="#697386" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 3 -9 H 12 L 17 -4 V 9 H 3 Z M 12 -9 V -4 H 17 M 6 0 H 14 M 6 4 H 14"/>
+</g>
+<text x="379" y="42.0" font-size="14" font-weight="500" fill="#30364A">arXiv</text>
+<rect x="438" y="20" width="132" height="34" rx="8" fill="#f4f6fa"/>
+<g transform="translate(448.000 37.000) scale(0.8000)" fill="none" stroke="#697386" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 6 -5 L 1 0 L 6 5 M 14 -5 L 19 0 L 14 5 M 12 -7 L 8 7"/>
+</g>
+<text x="469" y="42.0" font-size="14" font-weight="500" fill="#30364A">GitHub code</text>
+<rect x="580" y="20" width="112" height="34" rx="8" fill="#f4f6fa"/>
+<g transform="translate(590.000 37.000) scale(0.8000)" fill="none" stroke="#697386" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="1" y="-7" width="18" height="14" rx="2"/><path d="M 1 -2 H 19 M 5 2 H 15 M 5 5 H 12"/>
+</g>
+<text x="611" y="42.0" font-size="14" font-weight="500" fill="#30364A">Web docs</text>
+<g data-loop="solution" transform="translate(202.0 129.0000) scale(1.0000) translate(-202.0 -129.0)">
+<rect x="132" y="109.000" width="140" height="46" rx="11" fill="#7A5FC4" opacity="0.0600"/>
+<rect x="132" y="106" width="140" height="46" rx="11" fill="#7A5FC4"/>
+<text x="202.0" y="136.4" fill="#FFFFFF" font-size="21" font-weight="700" text-anchor="middle">solutions</text>
+</g>
+<g data-loop="query" transform="translate(504.0 129.0000) scale(1.0000) translate(-504.0 -129.0)">
+<rect x="377" y="109.000" width="254" height="46" rx="11" fill="#3F78C0" opacity="0.0600"/>
+<rect x="377" y="106" width="254" height="46" rx="11" fill="#3F78C0"/>
+<text x="504.0" y="136.4" fill="#FFFFFF" font-size="21" font-weight="700" text-anchor="middle">web-search queries</text>
+<rect x="393" y="147" width="7" height="2" rx="1" fill="#FFFFFF" opacity="0.8500"/>
+<rect x="404" y="147" width="7" height="2" rx="1" fill="#FFFFFF" opacity="0.8500"/>
+<rect x="415" y="147" width="7" height="2" rx="1" fill="#FFFFFF" opacity="0.8500"/>
+</g>
+<text x="22" y="137" fill="#30364A" font-size="20">Evolving</text>
+<text x="305" y="137" fill="#30364A" font-size="20">and</text>
+<text x="678" y="137" fill="#30364A" font-size="20">together.</text>
+<text x="353" y="226" fill="#697386" font-size="11.5" text-anchor="middle">Selected evidence</text>
+<g opacity="1.0000">
+<rect x="197.120" y="158.490" width="28" height="26" rx="6" fill="#FFFFFF"/>
+<rect x="199.120" y="160.490" width="24" height="22" rx="5" fill="#7462c4"/>
+<g transform="translate(203.120 171.490) scale(0.8000)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 3 -9 H 12 L 17 -4 V 9 H 3 Z M 12 -9 V -4 H 17 M 6 0 H 14 M 6 4 H 14"/>
+</g>
+</g>
+<g opacity="1.0000">
+<rect x="339.000" y="185.875" width="28" height="26" rx="6" fill="#FFFFFF"/>
+<rect x="341.000" y="187.875" width="24" height="22" rx="5" fill="#5c6cc2"/>
+<g transform="translate(345.000 198.875) scale(0.8000)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 6 -5 L 1 0 L 6 5 M 14 -5 L 19 0 L 14 5 M 12 -7 L 8 7"/>
+</g>
+</g>
+<g opacity="1.0000">
+<rect x="480.880" y="156.336" width="28" height="26" rx="6" fill="#FFFFFF"/>
+<rect x="482.880" y="158.336" width="24" height="22" rx="5" fill="#4575c0"/>
+<g transform="translate(486.880 169.336) scale(0.8000)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="1" y="-7" width="18" height="14" rx="2"/><path d="M 1 -2 H 19 M 5 2 H 15 M 5 5 H 12"/>
+</g>
+</g>
+</g></svg>

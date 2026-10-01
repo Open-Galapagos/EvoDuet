@@ -1,0 +1,37 @@
+# SimpleTES erdos/erdos_min_overlap — ported verbatim from https://github.com/wq-will/SimpleTES (datasets/erdos/erdos_min_overlap)
+# Usage: skydiscover-run benchmarks/simpletes/datasets/erdos/simpletes_erdos_min_overlap/initial_program.py benchmarks/simpletes/datasets/erdos/simpletes_erdos_min_overlap/skydiscover_evaluator.py -c benchmarks/simpletes/datasets/erdos/simpletes_erdos_min_overlap/config.yaml -s <strategy>
+# prompt.system_message is the upstream erdos_min_overlap.txt byte-for-byte; see benchmarks/simpletes/README.md.
+language: python
+diff_based_generation: true
+max_iterations: 100
+checkpoint_interval: 10
+max_solution_length: 60000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: "gpt-5"
+      weight: 1.0
+  max_tokens: 32000
+  timeout: 600
+prompt:
+  system_message: |
+    Find a step function h: [0, 2] → [0, 1] that **minimizes** the overlap integral:
+
+    $$C_5 = \\max_k \\int h(x)(1 - h(x+k)) dx$$
+
+    **Constraints**:
+    1. h(x) ∈ [0, 1] for all x
+    2. ∫₀² h(x) dx = 1
+
+    **Discretization**: Represent h as n_points samples over [0, 2].
+    With dx = 2.0 / n_points:
+    - 0 ≤ h[i] ≤ 1 for all i
+    - sum(h) * dx = 1 (equivalently: sum(h) == n_points / 2 exactly)
+
+    Do this by evolving the code between # EVOLVE-BLOCK-START and # EVOLVE-BLOCK-END.
+
+    The time limit for each program evaluation is 1100 seconds.
+evaluator:
+  timeout: 1230
+  max_retries: 1
+  cascade_evaluation: false

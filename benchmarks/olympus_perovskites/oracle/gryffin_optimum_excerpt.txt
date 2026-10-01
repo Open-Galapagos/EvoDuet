@@ -1,0 +1,2 @@
+# the categorical options corresponding to the minimum bandgap in the dataset (optimum)
+optimum = ['hydrazinium', 'I', 'Sn'] # value = 1.5249 eV

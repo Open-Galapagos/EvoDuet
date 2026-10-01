@@ -1,0 +1,45 @@
+{
+  "collection": "Direct HTTP fetch and deterministic excerpt extraction; no LLM or Tavily call.",
+  "scores": "Relevance/helpfulness fields are curator labels, not measured model benefit.",
+  "default_evidence_level": "direct",
+  "documents": [
+    {
+      "url": "https://pysindy.readthedocs.io/en/latest/examples/sindy-original-example/30f4dcd/original_paper.html",
+      "resolved_url": null,
+      "fetched_at": null,
+      "retrieval_mode": "cache",
+      "cache_mtime_at": "2026-09-09T00:29:21.750232+00:00",
+      "metadata_note": "Cached response bytes do not preserve the HTTP fetch timestamp or redirect URL.",
+      "response_sha256": "2778ba18fa4771b741612aa1eb8794f83f60dc15c4c46a8d42b0a39c22b2de6c",
+      "response_bytes": 144622,
+      "title": "PySINDy — Cubic 2D ODE",
+      "evidence_level": "direct",
+      "retained_file": "sindy_excerpt.txt",
+      "selection": "Complete displayed governing equation in the Cubic 2D ODE section.",
+      "raw_content_sha256": "71d162d7b47dc0c236b4b272f30989c6fcee9283097878b25b29f619e9a219c0",
+      "excerpt_sha256": [
+        "71d162d7b47dc0c236b4b272f30989c6fcee9283097878b25b29f619e9a219c0"
+      ],
+      "raw_content_truncated": true
+    },
+    {
+      "url": "https://pysindy.readthedocs.io/en/stable/tips.html",
+      "resolved_url": null,
+      "fetched_at": null,
+      "retrieval_mode": "cache",
+      "cache_mtime_at": "2026-09-09T00:31:44.107454+00:00",
+      "metadata_note": "Cached response bytes do not preserve the HTTP fetch timestamp or redirect URL.",
+      "response_sha256": "60ce5d5fb7ce25525854194177aa96e84f34a1fab0aacea876768d23e1e6062f",
+      "response_bytes": 22700,
+      "title": "PySINDy — Practical tips, library selection",
+      "evidence_level": "inferential",
+      "retained_file": "tips_excerpt.txt",
+      "selection": "One complete sentence from Library selection; no target equations retained.",
+      "raw_content_sha256": "a34c4d599ea24d80f5e766439af24fdf59033ab6a1afbde5ba86ead88bf848b4",
+      "excerpt_sha256": [
+        "a34c4d599ea24d80f5e766439af24fdf59033ab6a1afbde5ba86ead88bf848b4"
+      ],
+      "raw_content_truncated": true
+    }
+  ]
+}

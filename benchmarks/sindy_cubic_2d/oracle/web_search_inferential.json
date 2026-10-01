@@ -1,0 +1,22 @@
+[
+  {
+    "function_name": "sindy_cubic_2d",
+    "function_description": "Improve the task solution using the cited public evidence.",
+    "web_search_query": "PySINDy — Practical tips, library selection",
+    "evidence_level": "inferential",
+    "response": {
+      "results": [
+        {
+          "title": "PySINDy — Practical tips, library selection",
+          "content": "The documentation recommends starting with a small function library and gradually expanding it until the desired performance is reached.",
+          "raw_content": "Therefore it is recommended to start with a small library whose size is gradually expanded until the desired level of performance is achieved.",
+          "raw_content_truncated": true,
+          "url": "https://pysindy.readthedocs.io/en/stable/tips.html",
+          "id": "sindy_cubic_2d:tips",
+          "relevance_score": 1.0,
+          "helpfulness_score": 1.0
+        }
+      ]
+    }
+  }
+]

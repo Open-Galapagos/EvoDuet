@@ -1,0 +1,4 @@
+# Evaluator; use the version recorded in validation.json for exact reproduction.
+rdkit==2026.3.5
+# Reference generator, available to evolved candidates as well.
+networkx==3.3

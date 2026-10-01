@@ -1,0 +1,29 @@
+{
+  "collection": "Direct HTTP fetch and deterministic excerpt extraction; no LLM or Tavily call.",
+  "scores": "Relevance/helpfulness fields are curator labels, not measured model benefit.",
+  "default_evidence_level": "direct",
+  "documents": [
+    {
+      "url": "https://arxiv.org/html/1403.7793",
+      "resolved_url": null,
+      "fetched_at": null,
+      "retrieval_mode": "cache",
+      "cache_mtime_at": "2026-09-09T00:29:21.768232+00:00",
+      "metadata_note": "Cached response bytes do not preserve the HTTP fetch timestamp or redirect URL.",
+      "response_sha256": "92bfa834df907d1d89b62158c016dd415fdd05938b369224a24e32cf35231a1c",
+      "response_bytes": 171833,
+      "title": "Yang et al. — Pressure vessel global optimum, equations 6, 20–21",
+      "evidence_level": "direct",
+      "retained_file": "pressure_excerpt.txt",
+      "selection": "Verbatim TeX annotation text of complete mathematical display blocks; prose omitted.",
+      "raw_content_sha256": "ad6f46007e00167bba4dacf798a02fcc79fc788dc782e53f67152496caaa8e29",
+      "excerpt_sha256": [
+        "44809b838412de600096d9e675d7e9ac4d84d16fcb3b4d9b69c035ae22b33a9a",
+        "065742bdd53af36451d91966f80fe8f4dd809d56f55374f6d9cc8aa24c5839a8",
+        "e8834e576b8047c0c83c43a77c0114a8d998611bee72ff90d66dbdb114c62b4f",
+        "48ad7b6e971cdb625f9da68797c1b227f77a313ed059cfee768901b40e66d6f1"
+      ],
+      "raw_content_truncated": true
+    }
+  ]
+}

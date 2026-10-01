@@ -1,0 +1,41 @@
+# Meta-search and guide configuration for the SimpleTES EvoX launchers.
+# The runner resolves these variables from the environment or repository .env.
+max_iterations: 100
+checkpoint_interval: 1
+log_level: INFO
+
+llm:
+  api_base: ${LITELLM_PROXY_API_BASE}
+  api_key: ${LITELLM_PROXY_API_KEY}
+  api_provider: openai
+  models:
+    - name: deepseek-v4-flash
+      weight: 1.0
+  guide_models:
+    - name: deepseek-v4-flash
+      max_tokens: 8000
+      timeout: 300
+  temperature: 0.7
+  max_tokens: 32000
+  timeout: 600
+  tools: []
+
+search:
+  type: evox_meta
+  num_context_programs: 2
+
+prompt:
+  template: evox
+  system_message: ../../../skydiscover/search/evox/config/evox_search_sys_prompt.txt
+
+evaluator:
+  timeout: 3600
+  max_retries: 3
+  cascade_evaluation: false
+
+evoduet:
+  enabled: false
+solution_confidence:
+  enabled: false
+diff_based_generation: false
+max_solution_length: 60000

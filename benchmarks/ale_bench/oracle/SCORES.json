@@ -1,0 +1,166 @@
+{
+  "_note": "Every number here was measured by this repo's own evaluators on the exact installed file - none is self-reported by the program's author. AHC039 is ranked on the 150-case PRIVATE set, not the 50 public cases: the public score has a +/-40 run-to-run spread on a ~3750 mean, wider than the gap between every candidate we tested. That choice is vindicated by ahc015, where the program with the best public score (gpt56_codex) is REJECTED on the private set - 33/200 cases fail. AHC058 has no private set at all (SimpleTES ships only the 150 public inputs), so its score is IN-SAMPLE: measured on the same inputs the search optimised against. Treat the two numbers differently.",
+  "ahc039": {
+    "program": "ahc039.cpp",
+    "approach": "Coarse-to-fine grid SA over cell sets. The plane is bucketed into square cells (ladder 2000 -> 1000 -> 500 -> 250 -> 125, each level upsampled 2x from the previous) with weight (#mackerel - #sardine); the search maintains a single connected, simply-connected polyomino with no diagonal pinch, so its boundary always traces exactly one legal rectilinear simple polygon. Every single-cell flip is validated in O(1) by a 256-entry table on the 8-neighbour mask (cyclic run count == 1, plus a 2x2 checkerboard test); weight, perimeter and corner count are maintained incrementally under hard caps of 4e5/cellsize boundary edges and 1000 corners, with an adaptive Lagrange price on perimeter targeting 99.5% of the budget. Level 0 runs 80 independent restarts from weighted-random seed cells and the top 8 states feed a narrowing beam (8 -> 4 -> 2 -> 1) down the ladder. A final exact sub-grid polish moves each polygon edge to the best integer coordinate within +/-61 (= CS/2-1 at CS=125, a bound that makes the move provably collision-free), scoring rectangle deltas exactly from x/y-sorted fish arrays, and a validator mirroring the official tester (bbox-touching self-intersection check, length, vertex count) guards the output with fallback to the unpolished polygon. Measured along the way: a local 50-case replica harness built on the cached public seeds plus the official Rust tester (calibrated against the real harness); a max-flow/min-cut Lagrangian relaxation used purely as a diagnostic, which showed that reassembling the relaxed optimum's components into one connected region (3444 on case 0000) loses to the SA (3628), so I dropped that route; and a 16x-time run plus a best-of-3 variance study which both showed the search is converged (<= +11 left), which is why I stopped tuning. Note on numbers: v8 (identical algorithm, PTG 0.99, env-tunable) measured 3878.96 on 2 repeats while v9 (PTG 0.995, all parameters hardcoded so a stray environment variable cannot perturb the judge run) measured 3872.33 on 3 repeats; the difference is inside the +/-10 run-to-run noise, and I report v9 because it is the file measured last and the hardened build.",
+    "measurement": "benchmarks/ale_bench/private_eval.py, 150-case private set, 5 runs total",
+    "private_score": 575336,
+    "private_score_min": 574820,
+    "private_score_max": 575658,
+    "rank": 1,
+    "rank_of": 683,
+    "performance": 3390,
+    "rank_1_in_all_5_runs": true,
+    "failed_cases": 0,
+    "installed_path_recheck": {
+      "private_score": 575179,
+      "rank": 1,
+      "performance": 3390,
+      "runs": 2
+    },
+    "time_limit_used_sec": 1.9,
+    "judge_limit_sec": 2.0,
+    "improvement_over_previous_best": "+3.52% private score; rank 3 -> rank 1",
+    "beats": {
+      "benchmarks/ale_bench/ale-bench-lite-problems/ahc039/best_program.cpp": {
+        "private_score": 555725.3,
+        "rank": 3.0,
+        "performance": 3034
+      },
+      "open_galapagos/galapagos-dev/outputs/codex_ale_bench_docker_web_off/gpt-5.6-sol/xhigh-auto_disabled_100it_200steps_seed0_cli-image-default/ahc039/best/best_program.cpp": {
+        "private_score": 555765.0,
+        "rank": 3.3,
+        "performance": 2994
+      },
+      "benchmarks/ale_bench/ale_agent_best/ahc039.cpp (= initial_program.cpp; ALE-Agent's best)": {
+        "private_score": 553817.7,
+        "rank": 4.0,
+        "performance": 2947
+      }
+    },
+    "also_tried": "A synthesis pass explored 8 parameter variants on a 200-case local set; its best (mean 3847.0) sat inside the noise band of this program (3839.2) and two variants produced degenerate polygons scoring 1, so nothing replaced it.",
+    "provenance": {
+      "scaffold": "claude-code Workflow \u2014 4 independent solver agents per task, each self-measuring with this repo's own evaluator; winner chosen by measured head-to-head, not by self-report",
+      "model": "claude-opus-5 (session: Opus 5, 1M context)",
+      "effort": "xhigh",
+      "date": "2026-09-01",
+      "workflow_run_id": "wf_9ee7b219-3f4",
+      "agent": "ahc039_solver4",
+      "agent_id": "a481dab8e1522b56e",
+      "angle_assigned": "grid-coarsening + max-weight-connected-subgraph",
+      "measured_versions": 8
+    },
+    "rank_caveat": "rank 1 / 683 is against the IN-CONTEST final standings only - that is the only thing ALE-Bench's rank estimator compares against. It is NOT the all-time record. AtCoder keeps a permanent post-contest leaderboard (https://atcoder.jp/contests/ahc039/standings/extended) where 17+ users have since beaten the contest winner's 566,997. On that board this program's 575,336 would sit 4th.",
+    "all_time_leaderboard": {
+      "1": {
+        "score": 575984,
+        "user": "aaaaaaaaaa2230",
+        "date": "2024-11-23",
+        "submission": 60131413,
+        "verified": "AtCoder Problems API, result AC"
+      },
+      "2": {
+        "score": 575667,
+        "user": "uta_ccc",
+        "date": "2024-11-17",
+        "submission": 59920362,
+        "verified": "AtCoder Problems API, result AC"
+      },
+      "3": {
+        "score": 575653,
+        "user": "PHarr_",
+        "date": "2025-05-01",
+        "submission": 65383501,
+        "verified": "AtCoder Problems API, result AC"
+      },
+      "4": {
+        "score": 575336,
+        "user": "THIS PROGRAM (locally measured, not AtCoder-judged)"
+      },
+      "5": {
+        "score": 573657,
+        "user": "jasonzliang",
+        "date": "2026-08-10"
+      },
+      "in_contest_winner": {
+        "score": 566997,
+        "user": "terry_u16",
+        "note": "improved to 569,460 post-contest"
+      }
+    },
+    "comparability_warnings": [
+      "DIFFERENT TEST CASES: ALE-Bench's 150 private cases use its own random 64-bit seeds (7882753771510266308, ...), not AtCoder's hidden 150 contest cases. Same generator and distribution, different draw - so cross-comparison carries sampling error on top of run-to-run variance.",
+      "DIFFERENT HARDWARE: measured on an AMD EPYC 9655 (Zen 5, 96C/socket x2). These solutions spend a fixed 1.90s wall-clock budget, so a faster CPU does more annealing iterations and scores higher. AtCoder's judge is slower, so the AtCoder-comparable score is likely BELOW 575,336.",
+      "NOT STATISTICALLY RESOLVABLE: the 648-point gap to the all-time #1 (0.113%) is smaller than this program's own run-to-run spread of 838 points (0.146%) on identical cases.",
+      "Only an actual AtCoder submission would settle whether this program beats the record."
+    ],
+    "honest_claim": "Best program in this repo by a clear margin (+3.52% over the previous best, which is far outside noise), and above the in-contest winner. In the same band as the all-time top submissions, but NOT the record and not demonstrably SOTA."
+  },
+  "ahc058": {
+    "program": "ahc058.py",
+    "approach": "Core method: represent a plan as an ORDERED PURCHASE SEQUENCE decoded ASAP (buy each item on the first turn it is affordable, idling while saving). This is provably complete \u2014 buying earlier never hurts, so any optimal plan is the ASAP decode of some order \u2014 and it makes \"save up for an expensive machine\" a reordering rather than a long chain of idle decisions. Every candidate is scored by an exact __int128 simulation (income tracked incrementally, only ids with a live chain updated per turn), so the objective is the true final apple count, never an estimate. Search = simulated annealing over that sequence (change/insert/erase/move one element, block insert/erase/move, and a chain-id remap that migrates a whole solution from machine id j1 to j2), run as a portfolio: ~50 greedy seeds from a projection-gain greedy over (cost multiplier lambda, optimism q, allowed-chain mask, two-phase money-engine-then-target-chain splits), deduped, then successive halving over 4 phases (14 seeds screened, top third, top sixth, then the leader). A checkpoint ladder (every 32 purchases) means a mutation at index k only re-simulates the suffix, and acceptance rebuilds only from that checkpoint forward \u2014 this alone took throughput from 135k to 800k-1.3M evaluated plans per case.\n\nMy assigned angle (beam search with a lookahead eval) was implemented three ways and empirically capped out far below the SA, so I adapted: on case 0, a turn-indexed beam with the closed-form \"final apples if we stop buying\" projection scored 53.9 at width 300 and only 54.17 at width 20000; a time-bucketed beam over macro-actions (\"wait until affordable, then buy\", which makes saving an explicit fair-comparison branch) scored 53.6; a rollout-evaluated greedy scored 54.0 \u2014 versus 57.6 for the exact-eval SA. The reason is structural: a chain purchase (level 2 or 3) only pays off in combination with many later purchases, so any node evaluated by a no-further-purchases projection is dominated by cheap immediate returns regardless of beam width. Exact evaluation of complete plans is what breaks that.\n\nMeasurements along the way: the free-money bound (unlimited apples, 500 turns) is log2 = 57.14 + log2(A_max), so money, not turns, is the binding constraint; scaling all costs down confirmed it (case 0: 57.6 at cost x1, 60.1 at x0.3, 63.5 at x1e-6). Convergence checks: 16x more wall time buys only +0.008 combined, and random (non-greedy) starting sequences converge to the same ~57.65 on case 0 \u2014 that is why I stopped tuning rather than adding search. Suffix-biased mutation sampling was tried and measurably hurt (1.8879 vs 1.8904), so positions stay uniform; SA temperature, schedule variants, seed count, block size and LNS re-greedy moves were all swept on 150-case 3-repetition local means and were flat or negative. Time limit is 1.85s (measured 1.85s CPU, 0.15s under the strict 2.0s limit); all 3 final harness runs were 150/150 AC.",
+    "measurement": "benchmarks/ale_bench/ahc058/evaluator.py, 150 public inputs x 3 judge runs; 15 judge runs total across 3 sessions",
+    "combined_score": 1.89206,
+    "combined_score_min": 1.89204,
+    "combined_score_max": 1.89207,
+    "total_score": 851425175,
+    "num_accepted": 150,
+    "num_cases": 150,
+    "session_means": [
+      1.89122,
+      1.89181,
+      1.89206
+    ],
+    "time_limit_used_sec": 1.85,
+    "judge_limit_sec": 2.0,
+    "in_sample": true,
+    "improvement_over_previous_best": "+7.29% combined score (793.6M -> 851.4M total)",
+    "beats": {
+      "solver3 v20.py (independent agent)": {
+        "combined_score": 1.89116,
+        "band": [
+          1.89108,
+          1.89123
+        ]
+      },
+      "solver4 sol_v18.py (independent agent)": {
+        "combined_score": 1.88775,
+        "band": [
+          1.8875,
+          1.88801
+        ]
+      },
+      "solver1 cand_v10.py (independent agent)": {
+        "combined_score": 1.88493
+      },
+      "open_galapagos/galapagos-dev/outputs/open_sci_discover/openevolve_ahc058_gpt_5_6_luna_openrouter/openai_gpt-5.6-luna/full_rewrite_seed42_100it/best/best_program.py": {
+        "combined_score": 1.76348,
+        "total_score": 793565180
+      },
+      "openevolve ahc058 claude_retrieval diff_based_edit": {
+        "combined_score": 1.75859
+      },
+      "openevolve ahc058 claude_retrieval full_rewrite": {
+        "combined_score": 1.70849
+      },
+      "openevolve ahc058 gpt-5.6-luna diff_based_edit": {
+        "combined_score": 1.63948
+      },
+      "benchmarks/ale_bench/ahc058/initial_program.py (stub)": {
+        "combined_score": 0.0
+      }
+    },
+    "note": "Four independent agents converged on the same representation - an ordered purchase sequence decoded ASAP, which is provably complete - and all four beat the previous best. Selection between them was by measured head-to-head with non-overlapping min/max bands.",
+    "provenance": {
+      "scaffold": "claude-code Workflow \u2014 4 independent solver agents per task, each self-measuring with this repo's own evaluator; winner chosen by measured head-to-head, not by self-report",
+      "model": "claude-opus-5 (session: Opus 5, 1M context)",
+      "effort": "xhigh",
+      "date": "2026-09-01",
+      "workflow_run_id": "wf_9ee7b219-3f4",
+      "agent": "ahc058_solver2",
+      "agent_id": "ab5bc674c58a2a1db",
+      "angle_assigned": "beam search with lookahead eval (agent reported it capped out, switched to SA)",
+      "measured_versions": 6
+    }
+  }
+}

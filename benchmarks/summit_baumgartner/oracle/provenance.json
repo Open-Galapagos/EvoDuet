@@ -1,0 +1,19 @@
+{
+  "fetched_at": "2026-09-09T03:17:50.732983+00:00",
+  "default_evidence_level": "inferential",
+  "collection_method": "manually curated fetched primary-source document; not a Tavily response",
+  "documents": [
+    {
+      "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmtd.202000051",
+      "retained_file": "paper_table_excerpt.txt",
+      "raw_content_sha256": "11625914953a9955fa59b16c3f1c38a245eec4d520dd82c8f73e988e192c4e89",
+      "raw_content_truncated": true,
+      "retrieval_method": "web.run fetched HTML document; retain verbatim rendered Table 1 header and AlPhos row only. Direct requests returned HTTP403; that response was not used.",
+      "evidence_level": "inferential",
+      "evidence_limit": "The published high-yield conditions are available, but they are not a certified optimum of the pinned current emulator.",
+      "rights": "Only a brief table header and factual numerical row retained; full article not redistributed."
+    }
+  ],
+  "llm_query_generation_run": false,
+  "no_document_probe_run": false
+}

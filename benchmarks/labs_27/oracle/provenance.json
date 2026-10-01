@@ -1,0 +1,28 @@
+{
+  "collection": "Direct HTTP fetch and deterministic excerpt extraction; no LLM or Tavily call.",
+  "scores": "Relevance/helpfulness fields are curator labels, not measured model benefit.",
+  "default_evidence_level": "direct",
+  "documents": [
+    {
+      "url": "https://arxiv.org/html/1512.02475",
+      "resolved_url": null,
+      "fetched_at": null,
+      "retrieval_mode": "cache",
+      "cache_mtime_at": "2026-09-09T00:29:21.789232+00:00",
+      "metadata_note": "Cached response bytes do not preserve the HTTP fetch timestamp or redirect URL.",
+      "response_sha256": "6100692b410e6384fe6dd62f98c1a6091972f1dc778526c3dfaaaaa41fbc4c70",
+      "response_bytes": 357532,
+      "title": "Packebusch and Mertens — LABS Table 1, N=27",
+      "evidence_level": "direct",
+      "retained_file": "labs_excerpt.txt",
+      "selection": "Original table header and complete N=27 row, plus its run-length-encoding definition fragment.",
+      "raw_content_sha256": "6cc57b43a8d502a3ab40c47c1d6950b7f6b2d51fc8612a6091867d20390f5f20",
+      "excerpt_sha256": [
+        "1272492c3f023203710d96d33ead8e245b24e76a94f2793b91eb68067fd4e11d",
+        "d316857994c038a8ba3bd39722917c66abe697495e873f27ee8e8773e8e65b00",
+        "5d4963f527716d9ac335446ff96b31e1e6c8aab740e0d5f76873c44983352748"
+      ],
+      "raw_content_truncated": true
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "collection": "Direct HTTP fetch and deterministic excerpt extraction; no LLM or Tavily call.",
+  "scores": "Relevance/helpfulness fields are curator labels, not measured model benefit.",
+  "default_evidence_level": "direct",
+  "documents": [
+    {
+      "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Chwirut2.dat",
+      "resolved_url": null,
+      "fetched_at": null,
+      "retrieval_mode": "cache",
+      "cache_mtime_at": "2026-09-09T00:29:21.792232+00:00",
+      "metadata_note": "Cached response bytes do not preserve the HTTP fetch timestamp or redirect URL.",
+      "response_sha256": "c37e5522a34f9a57e18d7d10f8736202eabc0c33b8e7ad0010e618db04b57411",
+      "response_bytes": 3178,
+      "title": "NIST StRD — Chwirut2 data and certified values",
+      "evidence_level": "direct",
+      "retained_file": "nist_excerpt.txt",
+      "selection": "Complete US-government numeric reference dataset.",
+      "raw_content_sha256": "c37e5522a34f9a57e18d7d10f8736202eabc0c33b8e7ad0010e618db04b57411",
+      "excerpt_sha256": [
+        "c37e5522a34f9a57e18d7d10f8736202eabc0c33b8e7ad0010e618db04b57411"
+      ],
+      "raw_content_truncated": false
+    }
+  ]
+}

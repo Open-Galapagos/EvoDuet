@@ -1,0 +1,39 @@
+name: EvoDuet CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline-tests-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: astral-sh/setup-uv@v4
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - run: uv sync --frozen --extra dev
+      - name: Verify package import
+        run: uv run --no-sync python -c "import skydiscover; print(skydiscover.__version__)"
+      - name: EvoDuet offline runtime and launcher tests
+        run: |
+          uv run --no-sync pytest -q tests/config \
+            tests/evoduet \
+            tests/search tests/llm tests/cli tests/utils \
+            tests/test_runner_checkpoint_atomic.py \
+            tests/test_runner_model_checkpoint.py \
+            tests/test_cli_positional_paths.py
+      - name: Build distribution
+        run: uv build

@@ -1,0 +1,2 @@
+# The candidate and evaluator require only the Python standard library.
+# SkyDiscover provides its own YAML/configuration dependencies.

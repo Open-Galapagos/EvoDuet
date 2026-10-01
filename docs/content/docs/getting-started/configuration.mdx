@@ -1,0 +1,170 @@
+---
+title: "Configuration"
+description: "Models, algorithms, config files, and the Python API."
+---
+
+## Pick a model
+
+SkyDiscover uses [LiteLLM](https://docs.litellm.ai/) under the hood, so any
+compatible model works:
+
+```bash
+--model gpt-5                           # OpenAI (default)
+--model gemini/gemini-3-pro-preview      # Google Gemini
+--model anthropic/claude-sonnet-4-6      # Anthropic
+--model ollama/llama3 --api-base http://localhost:11434/v1  # Local
+```
+
+## Pick an algorithm
+
+| Algorithm | Flag | Best for |
+|:---|:---|:---|
+| **EvoX** | `--search evox` | Self-evolving strategy that adapts how it searches |
+| **AdaEvolve** | `--search adaevolve` | Multi-island adaptive search with breakthroughs |
+| **Best-of-N** | `--search best_of_n` | Quick baseline — generates N variants, keeps the best |
+| **Top-K** | `--search topk` | Iteratively refines the top K solutions |
+| **Beam Search** | `--search beam_search` | Breadth-first expansion of promising solutions |
+
+## Config files
+
+Pass a YAML config with `--config` for full control:
+
+```yaml
+max_iterations: 100
+llm:
+  models:
+    - name: "gpt-5"
+      weight: 0.7
+    - name: "gemini/gemini-3-pro-preview"
+      weight: 0.3
+  max_tokens: 8192
+  timeout: 120
+
+search:
+  type: "evox"
+
+prompt:
+  system_message: |
+    You are an expert at optimizing algorithms.
+
+evaluator:
+  timeout: 60
+```
+
+Multi-model pools with weighted sampling let you blend different LLMs —
+SkyDiscover samples from them probabilistically each iteration.
+
+## Generate multiple candidates per iteration
+
+Set `num_generations` to generate N candidates from the same parent and final
+prompt, evaluate each candidate that parses successfully, and add only the best
+valid candidate to the search database:
+
+```bash
+uv run --no-sync skydiscover-run initial_program.py evaluator.py \
+  --config config.yaml --search openevolve_native --output outputs/my_run_n4 \
+  --num_generations 4 --max_parallel_generations 4 --max_parallel_evaluations 1
+```
+
+The equivalent top-level YAML settings are:
+
+```yaml
+num_generations: 4             # default: 1, preserves the existing single-candidate path
+max_parallel_generations: 4   # default: null, allows up to num_generations requests
+max_parallel_evaluations: 1   # default: 1; increase only for evaluators that support concurrency
+```
+
+Program generation uses N concurrent single-response requests. All candidates in
+a batch use the same sampled model, parent, context, and prompt. EvoDuet
+retrieval runs once per iteration; its evidence is shared across the batch.
+Generation finishes before evaluation starts. The two concurrency limits are
+shared across simultaneous iterations within one controller.
+
+Selection follows the search database's existing score comparison (normally the
+highest `combined_score`); equal scores keep the first sample. A failed generation,
+invalid edit, or failed evaluation excludes only that candidate. If all candidates
+fail, the existing iteration retry budget retries the whole batch with failure
+feedback. An all-failed iteration is archived without adding a search candidate.
+From-scratch initialization also selects one candidate from a batch, using the
+existing single-attempt initialization behavior.
+
+The selected program's `metadata.generation_batches` records every candidate's
+solution, response, metrics, failure, and selection status. Full LLM call records
+for all candidates remain attached to the selected program, with
+`candidate_program_id`, `sample_index`, and `candidate_selected` identifying their
+source. Failed iterations retain these records in the evolution archive.
+When solution confidence is enabled, each candidate gets its own assessment
+before its evaluation. Checkpoints retain the batch records.
+
+This option supports `openevolve_native`, `topk`, `best_of_n`, and `beam_search`
+with non-agentic text/code generation. Unsupported controllers and image or
+agentic generation reject N > 1 before starting. `max_parallel_iterations`
+still controls concurrent search iterations; one successful iteration adds one
+program even when it generates N candidates. Budget for N generation requests
+and up to N evaluations per attempt. Existing launch scripts keep N = 1 unless
+you change their configuration. Use a separate output directory for N > 1 runs.
+
+## Live dashboard
+
+Add this to your config to get a real-time monitoring dashboard:
+
+```yaml
+monitor:
+  enabled: true
+```
+
+The dashboard URL prints at run start — it shows a scatter plot of all
+programs, code diffs, metrics, and lets you give human feedback to steer
+evolution in real time.
+
+## Python API
+
+You can also run SkyDiscover programmatically:
+
+```python
+from skydiscover import run_discovery
+
+result = run_discovery(
+    initial_program="initial_program.py",
+    evaluator="evaluator.py",
+    search="evox",
+    model="gpt-5",
+    iterations=50,
+)
+
+print(result.best_score, result.best_solution)
+```
+
+Or use the inline convenience wrapper for quick experiments:
+
+```python
+from skydiscover import discover_solution
+
+result = discover_solution(
+    initial_solution="def solve(x): return x",
+    evaluator=lambda path: {"combined_score": run_tests(path)},
+    iterations=50,
+    search="evox",
+)
+```
+
+## CLI reference
+
+```
+uv run skydiscover-run [INITIAL_PROGRAM] EVALUATOR [options]
+```
+
+| Flag | Description |
+|:---|:---|
+| `-c, --config FILE` | Config YAML |
+| `-i, --iterations N` | Number of iterations |
+| `-m, --model MODEL` | LLM model (overrides config) |
+| `-s, --search TYPE` | Search algorithm |
+| `-o, --output DIR` | Output directory |
+| `--api-base URL` | Override LLM API endpoint |
+| `--checkpoint DIR` | Resume from checkpoint |
+| `--num_generations N` | Candidates per prompt; evaluate them and keep the best (default: 1) |
+| `--max_parallel_generations N` | Concurrent candidate generation requests per controller |
+| `--max_parallel_evaluations N` | Concurrent candidate evaluations per controller (default: 1) |
+| `--agentic` | Enable agentic mode (LLM can read your files) |
+| `-l, --log-level LEVEL` | DEBUG, INFO, WARNING, or ERROR |

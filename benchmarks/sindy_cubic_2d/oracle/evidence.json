@@ -1,0 +1,51 @@
+{
+  "direct": [
+    {
+      "function_name": "sindy_cubic_2d",
+      "function_description": "Improve the task solution using the cited public evidence.",
+      "web_search_query": "PySINDy — Cubic 2D ODE",
+      "helpful_web_documents": [
+        {
+          "web_search_query": "PySINDy — Cubic 2D ODE",
+          "results": [
+            {
+              "title": "PySINDy — Cubic 2D ODE",
+              "content": "The cubic two-dimensional example has dx/dt = -0.1*x^3 + 2*y^3 and dy/dt = -2*x^3 - 0.1*y^3. The displayed coefficient matrix acts on the vector [x^3, y^3].",
+              "raw_content": "\\[\\begin{split}\\frac{d}{dt}\\begin{bmatrix}x \\\\ y\\end{bmatrix} = \\begin{bmatrix}-0.1 & 2 \\\\ -2 & -0.1 \\end{bmatrix} \\begin{bmatrix}x^3 \\\\ y^3\\end{bmatrix}\\end{split}\\]",
+              "raw_content_truncated": true,
+              "url": "https://pysindy.readthedocs.io/en/latest/examples/sindy-original-example/30f4dcd/original_paper.html",
+              "id": "sindy_cubic_2d:sindy",
+              "relevance_score": 1.0,
+              "helpfulness_score": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "inferential": [
+    {
+      "function_name": "sindy_cubic_2d",
+      "function_description": "Improve the task solution using the cited public evidence.",
+      "web_search_query": "PySINDy — Practical tips, library selection",
+      "helpful_web_documents": [
+        {
+          "web_search_query": "PySINDy — Practical tips, library selection",
+          "results": [
+            {
+              "title": "PySINDy — Practical tips, library selection",
+              "content": "The documentation recommends starting with a small function library and gradually expanding it until the desired performance is reached.",
+              "raw_content": "Therefore it is recommended to start with a small library whose size is gradually expanded until the desired level of performance is achieved.",
+              "raw_content_truncated": true,
+              "url": "https://pysindy.readthedocs.io/en/stable/tips.html",
+              "id": "sindy_cubic_2d:tips",
+              "relevance_score": 1.0,
+              "helpfulness_score": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "insufficient": []
+}

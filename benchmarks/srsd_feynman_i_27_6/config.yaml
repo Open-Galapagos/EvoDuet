@@ -1,0 +1,46 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+checkpoint_interval: 5
+max_solution_length: 40000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: gpt-5
+      weight: 1.0
+  max_tokens: 16384
+  timeout: 600
+prompt:
+  system_message: |
+    Solve one published symbolic regression task from SRSD-Feynman Easy.
+    Geometrical optics: recover focal distance (metres) from x0 = object distance d1 (metres), x1 = refractive index n (dimensionless), and x2 = image distance d2 (metres). These are the original noiseless SRSD-Feynman Easy observations, not a newly generated equation.
+    Implement solve(payload) using the supplied x_train (8000 rows, three columns),
+    y_train (8000 targets), variables, and variable_descriptions.
+    Return exactly {"expression": "<arithmetic expression>"}.
+    
+    The expression may use x0, x1, x2, pi, finite numeric literals, +, -, *, /,
+    numeric powers ** (literal exponent in [-8,8]), and one-argument
+    sin, cos, exp, log, sqrt. No Python attributes, indexing, conditionals, or
+    arbitrary functions. Limit: 2000 characters, 80 AST nodes, depth 16.
+    Pure constant expressions, nonfinite/singular predictions, and malformed
+    artifacts are invalid. Fit constants using only the supplied training data.
+    
+    Minimize the original validation mean squared relative error:
+    MSRE = mean(((prediction-y)/y)**2), on the fixed 1000-row validation split.
+    The maximized adapter score is 1/(1+MSRE); no absolute-error floor is used.
+    The 1000-row test split is used only by evaluate_final, which additionally
+    reports the native canonical equation-tree normalized edit distance (NED).
+    NED uses unit node insert/delete/rename costs and ignores constant magnitudes;
+    it is a separate final diagnostic, not the search score.
+    The initial program fits only the x0 dependence.
+    
+    Preserve solve and EVOLVE-BLOCK markers. NumPy and SymPy are available.
+    Candidate execution has 30 seconds and 2 GiB memory; the evaluator grades
+    the returned expression independently in a second limited process.
+    Do not access evaluator/oracle/data files, network services, or held-out data.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: true

@@ -1,0 +1,30 @@
+{
+  "collection": "Direct HTTP fetch of pinned upstream notebook; deterministic extraction of one complete source cell. No LLM or search API calls.",
+  "scores": "Relevance/helpfulness are curator labels, not measured model benefit.",
+  "default_evidence_level": "direct",
+  "repository": "https://github.com/aspuru-guzik-group/gryffin",
+  "revision": "fb149d18f9c81b96179cc682c46e05db60bc7229",
+  "rendered_document_url": "https://gryffin.readthedocs.io/en/latest/tutorials/perovskites.html",
+  "documents": [
+    {
+      "url": "https://raw.githubusercontent.com/aspuru-guzik-group/gryffin/fb149d18f9c81b96179cc682c46e05db60bc7229/docs/source/tutorials/perovskites.ipynb",
+      "resolved_url": "https://raw.githubusercontent.com/aspuru-guzik-group/gryffin/fb149d18f9c81b96179cc682c46e05db60bc7229/docs/source/tutorials/perovskites.ipynb",
+      "fetched_at": "2026-09-09T03:16:52.988471+00:00",
+      "response_sha256": "db42fe132f4a1903c093bab12e291f643d7aa63933fdb3b60d51677d27d29e45",
+      "response_bytes": 16709,
+      "response_file": "perovskites.ipynb",
+      "retained_file": "gryffin_optimum_excerpt.txt",
+      "selection": "Complete source string of notebook cells[5], obtained by JSON decoding and joining its source array without rewriting.",
+      "raw_content_sha256": "12525d894adcdae8fa9289c1056b5bc3415aefe99308cba53ea7e07ba8e39f5a",
+      "raw_content_truncated": true,
+      "evidence_level": "direct"
+    }
+  ],
+  "license": {
+    "url": "https://raw.githubusercontent.com/aspuru-guzik-group/gryffin/fb149d18f9c81b96179cc682c46e05db60bc7229/LICENSE.md",
+    "resolved_url": "https://raw.githubusercontent.com/aspuru-guzik-group/gryffin/fb149d18f9c81b96179cc682c46e05db60bc7229/LICENSE.md",
+    "fetched_at": "2026-09-09T03:16:52.985926+00:00",
+    "sha256": "32fea835cf0da4b56fef8a1f3af33985fb7c7a5020b5307dc3ee7d530ca55408",
+    "bytes": 10768
+  }
+}

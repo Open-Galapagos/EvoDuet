@@ -1,0 +1,26 @@
+[
+  {
+    "function_name": "reaction_condition_selection",
+    "function_description": "Select catalyst, base and continuous operating conditions for high predicted yield.",
+    "web_search_query": "Summit Baumgartner cross coupling Table 1 AlPhos BTMG",
+    "helpful_web_documents": [
+      {
+        "web_search_query": "Summit Baumgartner cross coupling Table 1 AlPhos BTMG",
+        "results": [
+          {
+            "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmtd.202000051",
+            "title": "Summit: Benchmarking Machine Learning Methods for Reaction Optimisation — Table 1",
+            "content": "The table lists a reaction using AlPhos as catalyst and BTMG as base, with 2.25 base equivalents, temperature 99.89 °C and residence time 1763.66 seconds. The reported yield is 1.09 and the reported cost is $0.52.",
+            "raw_content": "Catalyst  | Base  | Base Equivalents  | Temperature (°C)  | \\tau \\left(s\\right)  | Yield  | Cost ($)\n--- | --- | --- | --- | --- | --- | ---\nAlPhos  | BTMG  | 2.25  | 99.89  | 1763.66  | 1.09  | 0.52\n",
+            "raw_content_truncated": true,
+            "score": 1,
+            "relevance_score": 1,
+            "helpfulness_score": 0.9,
+            "id": "summit-table1",
+            "evidence_level": "inferential"
+          }
+        ]
+      }
+    ]
+  }
+]

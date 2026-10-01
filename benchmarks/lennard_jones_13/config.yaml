@@ -1,0 +1,39 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+checkpoint_interval: 5
+max_solution_length: 40000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: gpt-5
+      weight: 1.0
+  max_tokens: 16384
+  timeout: 300
+prompt:
+  system_message: |
+    Improve a program for the published 13-atom Lennard-Jones cluster
+    optimization task. Implement solve(payload), returning exactly 13 rows
+    [x, y, z], one row per atom, as an ordinary JSON-compatible list of lists.
+    The same fixed physical instance is evaluated each time; there are no
+    hidden cases. payload contains n_atoms=13, epsilon=1.0 and sigma=1.0.
+
+    Minimize the full pair potential energy:
+      E = 4*epsilon*sum((sigma/r_ij)**12 - (sigma/r_ij)**6 for all i<j),
+    where r_ij is the Euclidean separation of atoms i and j. There are no
+    periodic boundaries, cutoffs, imposed box, or external confining potential.
+    Coordinates must be finite and every pair distance must be positive.
+
+    The evaluator independently recomputes all 78 pair energies. More negative
+    energy earns a higher bounded score; nonnegative energy earns zero.
+    Malformed/non-finite outputs or coincident atoms are invalid and score zero.
+    Return numbers, excluding booleans. The candidate has 30 seconds, one
+    numerical-library thread, and 2 GiB memory. Keep the solve signature and
+    EVOLVE-BLOCK markers. Compute from the task data; do not read evaluator,
+    reference, or oracle files.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: false

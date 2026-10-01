@@ -1,0 +1,158 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skydiscover"
+dynamic = ["version"]
+description = "EvoDuet: joint evolution of programs and web-search evidence on SkyDiscover"
+readme = "README.md"
+requires-python = ">=3.10, <3.14"
+license = {text = "Apache-2.0"}
+dependencies = [
+    "httpx>=0.28.1",
+    "jsonschema>=4.0.0",
+    "openai>=1.0.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.64.0",
+    "numpy>=1.22.0",
+    "python-dotenv>=1.2.1",
+]
+
+[project.optional-dependencies]
+math = [
+    "scipy>=1.11.0",
+    "sympy>=1.14.0",
+    "jax>=0.6.2",
+    "optax>=0.2.6",
+    "torch",
+    "scikit-learn>=1.0.0",
+    "numba",
+    "pandas",
+    "matplotlib",
+    "plotly",
+    "networkx",
+    "cvxpy",
+    "autograd",
+    "pymoo",
+    "PyWavelets",
+]
+adrs = [
+    "numpy>=1.22.0",
+    "pandas",
+    "networkx>=3.2,<3.4",
+    "torch",
+]
+ale-bench = [
+    # Vendored as a git submodule; run `git submodule update --init` first.
+    # The [eval] extra is not optional — ale_bench_eval imports it at package import.
+    "ale_bench[eval]",
+]
+external = [
+    "openevolve",
+    "gepa[full]",
+    "litellm>=1.81",  # gepa[full] needs litellm, but uv override-dependencies strips the [full] extra
+    "alpha-evolve",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "mypy>=0.950",
+    "requests>=2.28.0",
+]
+frontier-cs = [
+    "anthropic>=0.74.0",
+    "colorlog>=6.10.1",
+    "datasets>=4.4.1",
+    "google-genai>=1.55.0",
+    "google-generativeai>=0.8.5",
+    "numpy>=2.0.0",  # Frontier-CS requires numpy 2.x
+    "python-dotenv>=1.2.1",
+    "skypilot>=0.10.5",
+]
+gpu-mode = [
+    # Host-evaluated: shared_eval.py imports torch, and the candidate kernels import triton.
+    # The opt-in Modal path (GPUMODE_USE_MODAL=true) additionally needs `modal`.
+    "torch",
+    "triton",
+]
+kernelbench = [
+    # The resolver fetches problems from the KernelBench package on the host even when the
+    # evaluator runs in Docker (config.yaml: use_docker: true). The evaluator image installs
+    # kernelbench[gpu] itself, so the host only needs the base package.
+    # It still pulls 16 packages (modal, transformers, safetensors, einops, ninja, ...) and
+    # holds dill, multiprocess and tokenizers a release back; see the litellm override below
+    # for the part that is NOT paid.
+    "kernelbench",
+]
+prompt-optimization = [
+    "dspy>=3.1.3",
+    "litellm>=1.81",
+    "bm25s>=0.3.0",
+    "pystemmer>=2.2.0.3",
+    "datasets>=4.5.0",
+    "diskcache>=5.6.3",
+    "ujson>=5.11.0",
+]
+
+[tool.uv]
+# `litellm>=1.81` strips the [proxy] extra that kernelbench asks for: it drags the whole
+# LiteLLM proxy server (granian, gunicorn, redis, rq, apscheduler, azure-*, ...) and forces
+# litellm 1.98, whose `openai>=2.20,<3` cap would downgrade SkyDiscover's own openai client.
+# KernelBench only calls `from litellm import completion`, which plain litellm provides.
+override-dependencies = ["httpx>=0.28.1", "gepa>=0.0.26", "litellm>=1.81"]
+
+[tool.uv.sources]
+ale_bench = { path = "benchmarks/ale_bench/ALE-Bench" }
+kernelbench = { git = "https://github.com/ScalingIntelligence/KernelBench.git" }
+openevolve = { git = "https://github.com/algorithmicsuperintelligence/openevolve.git", branch = "main" }
+gepa = { git = "https://github.com/gepa-ai/gepa.git", branch = "main" }
+alpha-evolve = { git = "https://github.com/Google-Cloud-AI/alphaevolve-on-googlecloud.git", branch = "main" }
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[project.scripts]
+evoduet-run = "skydiscover.evoduet_cli:main"
+skydiscover-run = "skydiscover.cli:main"
+skydiscover-viewer = "skydiscover.extras.monitor.viewer:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests requiring external services"
+]
+addopts = "--strict-markers"
+
+[tool.setuptools.packages.find]
+include = ["skydiscover*"]
+
+[tool.setuptools.package-data]
+skydiscover = [
+    "prompt/*.txt",
+    "context_builder/*/templates/*.txt",
+    "search/evox/config/*.yaml",
+    "search/evox/config/*.txt",
+    "evoduet/prompts/*.txt",
+    "extras/external/defaults/*.yaml",
+    "extras/monitor/dashboard.html",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "skydiscover._version.__version__"}

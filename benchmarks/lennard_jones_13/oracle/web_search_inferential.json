@@ -1,0 +1,22 @@
+[
+  {
+    "function_name": "lennard_jones_13",
+    "function_description": "Improve the task solution using the cited public evidence.",
+    "web_search_query": "Doye — LJ13 structure",
+    "evidence_level": "inferential",
+    "response": {
+      "results": [
+        {
+          "title": "Doye — LJ13 structure",
+          "content": "The author states that a complete icosahedron can form and is the global minimum. This passage does not provide Cartesian coordinates or the optimum length scale.",
+          "raw_content": "This size is a magic number because it is possible to form a complete icosahedron, \nwhich is the global minimum.",
+          "raw_content_truncated": true,
+          "url": "https://www-wales.ch.cam.ac.uk/~jon/forest/LJ.html",
+          "id": "lennard_jones_13:lj_method",
+          "relevance_score": 1.0,
+          "helpfulness_score": 1.0
+        }
+      ]
+    }
+  }
+]

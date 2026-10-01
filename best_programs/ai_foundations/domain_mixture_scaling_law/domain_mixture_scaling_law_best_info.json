@@ -1,0 +1,147 @@
+{
+  "id": "3425689e-66d0-4168-87a5-8544bb7bf7f5",
+  "generation": 0,
+  "iteration": 96,
+  "timestamp": 1789804593.496154,
+  "parent_id": "be97738e-1a42-4590-abce-bae232e726a0",
+  "metrics": {
+    "nmse": 0.000741513801608692,
+    "nmae": 0.024561800206833267,
+    "r2": 0.9992584861983913,
+    "combined_score": 0.9992584861983913,
+    "nmse_per_dim": [
+      0.0004982803935368034,
+      0.0010434470563928586,
+      0.001271013416745525,
+      0.0004982696663832832,
+      0.0003965584749849901
+    ],
+    "nmae_per_dim": [
+      0.020398858133999883,
+      0.02979689039111487,
+      0.033867219231571086,
+      0.021453362719664495,
+      0.017292670557816005
+    ],
+    "r2_per_dim": [
+      0.9995017196064632,
+      0.9989565529436072,
+      0.9987289865832545,
+      0.9995017303336167,
+      0.999603441525015
+    ],
+    "posthoc_test_nmse": 0.0029379154760676195,
+    "posthoc_test_nmae": 0.04917344606810846,
+    "posthoc_test_r2": 0.9970620845239324,
+    "posthoc_test_combined_score": 0.9970620845239324,
+    "posthoc_test_nmse_per_dim": [
+      0.0008124511756657841,
+      0.0033737204673747394,
+      0.007286563950671765,
+      0.0017053021834872377,
+      0.001511539603138572
+    ],
+    "posthoc_test_nmae_per_dim": [
+      0.0269618634882431,
+      0.06181312812494681,
+      0.0861666686707646,
+      0.03461284631880455,
+      0.03631272373778324
+    ],
+    "posthoc_test_r2_per_dim": [
+      0.9991875488243342,
+      0.9966262795326253,
+      0.9927134360493283,
+      0.9982946978165128,
+      0.9984884603968615
+    ],
+    "posthoc_test_validity": 1,
+    "posthoc_test_completed": 1,
+    "posthoc_test_protocol": "simpletes-scaling-held-out-v2",
+    "posthoc_test_protocol_version": 2,
+    "posthoc_test_candidate_sha256": "6b2f917e8dfee7016ba04d4cd9f6b98d20bb6006950eeb5873ce6b1f56e2f48a",
+    "posthoc_test_seed_policy": "Original evaluator defaults; no additional random seed"
+  },
+  "language": "python",
+  "saved_at": 1789806499.5336049,
+  "posthoc_final_evaluation": {
+    "identity": {
+      "protocol": "simpletes-scaling-held-out-v2",
+      "task": "domain_mixture_scaling_law",
+      "fit_split": "train",
+      "score_split": "test",
+      "seed_policy": "Original evaluator defaults; no additional random seed",
+      "timeout": 3000,
+      "evaluator_sha256": "d69a3478c11302f7246c99338cd8631282cc5d98daa26a4d1cb604aa86be263b",
+      "candidate_sha256": "6b2f917e8dfee7016ba04d4cd9f6b98d20bb6006950eeb5873ce6b1f56e2f48a",
+      "best_id": "3425689e-66d0-4168-87a5-8544bb7bf7f5",
+      "initial_sha256": "ede7f603e47fe48b33a5d8cbd274f46987040b28f7bc58a040c611a84836029f"
+    },
+    "best_metrics": {
+      "posthoc_test_nmse": 0.0029379154760676195,
+      "posthoc_test_nmae": 0.04917344606810846,
+      "posthoc_test_r2": 0.9970620845239324,
+      "posthoc_test_combined_score": 0.9970620845239324,
+      "posthoc_test_nmse_per_dim": [
+        0.0008124511756657841,
+        0.0033737204673747394,
+        0.007286563950671765,
+        0.0017053021834872377,
+        0.001511539603138572
+      ],
+      "posthoc_test_nmae_per_dim": [
+        0.0269618634882431,
+        0.06181312812494681,
+        0.0861666686707646,
+        0.03461284631880455,
+        0.03631272373778324
+      ],
+      "posthoc_test_r2_per_dim": [
+        0.9991875488243342,
+        0.9966262795326253,
+        0.9927134360493283,
+        0.9982946978165128,
+        0.9984884603968615
+      ],
+      "posthoc_test_validity": 1,
+      "posthoc_test_completed": 1,
+      "posthoc_test_protocol": "simpletes-scaling-held-out-v2",
+      "posthoc_test_protocol_version": 2,
+      "posthoc_test_candidate_sha256": "6b2f917e8dfee7016ba04d4cd9f6b98d20bb6006950eeb5873ce6b1f56e2f48a",
+      "posthoc_test_seed_policy": "Original evaluator defaults; no additional random seed"
+    },
+    "initial_metrics": {
+      "posthoc_test_nmse": 0.20778539459181466,
+      "posthoc_test_nmae": 0.4525585718631563,
+      "posthoc_test_r2": 0.7922146054081853,
+      "posthoc_test_combined_score": 0.7922146054081853,
+      "posthoc_test_nmse_per_dim": [
+        0.5151004939324768,
+        0.032857740500070676,
+        0.23809583650443342,
+        0.21257477512381998,
+        0.04029812689827247
+      ],
+      "posthoc_test_nmae_per_dim": [
+        0.8300919120168552,
+        0.1865779077837051,
+        0.49866003617462906,
+        0.5231647729090668,
+        0.22429823043152508
+      ],
+      "posthoc_test_r2_per_dim": [
+        0.4848995060675232,
+        0.9671422594999293,
+        0.7619041634955666,
+        0.78742522487618,
+        0.9597018731017275
+      ],
+      "posthoc_test_validity": 1,
+      "posthoc_test_completed": 1,
+      "posthoc_test_protocol": "simpletes-scaling-held-out-v2",
+      "posthoc_test_protocol_version": 2,
+      "posthoc_test_candidate_sha256": "ede7f603e47fe48b33a5d8cbd274f46987040b28f7bc58a040c611a84836029f",
+      "posthoc_test_seed_policy": "Original evaluator defaults; no additional random seed"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "collection": "Direct HTTP fetch and deterministic excerpt extraction; no LLM or Tavily call.",
+  "scores": "Relevance/helpfulness fields are curator labels, not measured model benefit.",
+  "default_evidence_level": "direct",
+  "documents": [
+    {
+      "url": "https://www-wales.ch.cam.ac.uk/~jon/structures/LJ/points/13",
+      "resolved_url": null,
+      "fetched_at": null,
+      "retrieval_mode": "cache",
+      "cache_mtime_at": "2026-09-09T00:29:22.629227+00:00",
+      "metadata_note": "Cached response bytes do not preserve the HTTP fetch timestamp or redirect URL.",
+      "response_sha256": "6397b7e9c06f5da94dbfcefe80d122ba068097517ef14454fdf2f2f31699d416",
+      "response_bytes": 807,
+      "title": "Cambridge Cluster Database — LJ13 Cartesian coordinates",
+      "evidence_level": "direct",
+      "retained_file": "lj_excerpt.txt",
+      "selection": "Complete numeric coordinate file, linked from the LJ13 global-minimum table.",
+      "raw_content_sha256": "6397b7e9c06f5da94dbfcefe80d122ba068097517ef14454fdf2f2f31699d416",
+      "excerpt_sha256": [
+        "6397b7e9c06f5da94dbfcefe80d122ba068097517ef14454fdf2f2f31699d416"
+      ],
+      "raw_content_truncated": false
+    },
+    {
+      "url": "https://www-wales.ch.cam.ac.uk/~jon/forest/LJ.html",
+      "resolved_url": null,
+      "fetched_at": null,
+      "retrieval_mode": "cache",
+      "cache_mtime_at": "2026-09-09T00:31:44.445452+00:00",
+      "metadata_note": "Cached response bytes do not preserve the HTTP fetch timestamp or redirect URL.",
+      "response_sha256": "e1be3c8f714eb5f329fe848efb623ae1a42d06d6cc5212645a4fd4c7cc802a5f",
+      "response_bytes": 6298,
+      "title": "Doye — LJ13 structure",
+      "evidence_level": "inferential",
+      "retained_file": "lj_method_excerpt.txt",
+      "selection": "One complete sentence in the LJ13 section.",
+      "raw_content_sha256": "5b0636177f5a2cf2bb0bdc0f34c5f533ce03479a62d50c405e5c8b11485cccaa",
+      "excerpt_sha256": [
+        "5b0636177f5a2cf2bb0bdc0f34c5f533ce03479a62d50c405e5c8b11485cccaa"
+      ],
+      "raw_content_truncated": true
+    }
+  ]
+}

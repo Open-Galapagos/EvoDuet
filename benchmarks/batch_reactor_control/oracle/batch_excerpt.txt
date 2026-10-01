@@ -1,0 +1,9 @@
+T.STATUS = 1
+
+m.Maximize(x2*final)
+
+m.options.IMODE = 6
+
+m.solve()
+
+The optimal objective value of the problem is x2(tf) = 0.6108.

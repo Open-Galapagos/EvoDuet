@@ -1,0 +1,37 @@
+You are given the recent evolutionary history, the current parent program, and the existing search database.
+
+[Evolutionary History]
+{evolutionary_history}
+
+[Current Program]
+{parent_program}
+
+[Search Database: Previous Queries, Documents, and Observed Outcomes]
+{search_database}
+
+Your task is to identify what knowledge is needed for the next attempt and assess whether it is available from your own knowledge, covered by previously retrieved documents, or requires new exploration and learning. Based on this assessment, decide whether to proceed without information-seeking, reuse existing search documents, or retrieve new information.
+
+Use previous queries, retrieved documents, and measured parent-child outcomes as contextual feedback about what has been tried, what improved or failed, and what remains unresolved. Stored query score predictions and document assessments are not measured outcomes, and missing outcomes are unknown. Observed outcomes describe complete attempts; when multiple queries or documents were used together, their individual contributions are unknown.
+
+You must return exactly one decision:
+- "no-op": skip information-seeking this iteration. Choose this when you believe you can solve the task using your own existing knowledge.
+- "look-up": reuse previously retrieved knowledge. Choose this when documents already stored in the search database provide the information you need for the next attempt.
+- "retrieve": run a fresh web search to acquire new knowledge. Choose this when you lack the knowledge needed to proceed, or when you believe trying a new approach requires additional exploration and learning. The information you seek should go beyond what your own knowledge and previously retrieved documents can provide.
+
+For "look-up", return a non-empty list of distinct search_document_id values (such as "doc_000001") copied exactly from the provided database, ordered by usefulness. Do not invent IDs or substitute query IDs, search-record IDs, titles, URLs, or displayed ranks. If no valid document ID is shown, do not choose "look-up". For "no-op" and "retrieve", return an empty list.
+
+Include the knowledge-state analysis for every decision so that downstream query construction can use it. Return exactly one valid JSON object with the four fields below and no additional commentary. Write the knowledge-state analysis as a JSON string.
+
+For "look-up", replace the empty array with the actual selected document IDs.
+
+## Output format
+```json
+{
+    "knowledge_state_analysis": "<describe what is known, what searches and experiments established, and what remains unresolved>",
+    "decision": "<exactly one of: no-op | look-up | retrieve>",
+    "reasoning": "<would additional evidence help, and is the needed information already in the search database?>",
+    "search_document_ids": []
+}
+```
+
+Decision:

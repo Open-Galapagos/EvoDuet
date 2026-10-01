@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-09-09T03:20:38.436777+00:00",
+  "initial": {
+    "combined_score": 0.6551045775413513,
+    "validity": 1.0,
+    "predicted_yield": 0.6551045775413513,
+    "ensemble_std": 0.053072039037942886,
+    "unclipped_mean_yield": 0.6551045775413513,
+    "clipped_members": 0
+  },
+  "reference": {
+    "combined_score": 0.9770283699035645,
+    "validity": 1.0,
+    "predicted_yield": 0.9770283699035645,
+    "ensemble_std": 0.022238288074731827,
+    "unclipped_mean_yield": 1.029503345489502,
+    "clipped_members": 2
+  },
+  "native_inference_parity": {
+    "designs": 241,
+    "absolute_tolerance": 2e-06,
+    "relative_tolerance": 2e-06,
+    "route": "pinned upstream ANNRegressor class + original PyTorch weights + sklearn preprocessors"
+  },
+  "focused_pytest": {
+    "passed": 16,
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest tests/evaluation/test_summit_baumgartner.py -q"
+  },
+  "no_document_probe_run": false,
+  "oracle_vs_control_experiment_run": false
+}

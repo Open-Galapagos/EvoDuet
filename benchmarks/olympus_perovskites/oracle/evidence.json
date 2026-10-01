@@ -1,0 +1,28 @@
+{
+  "direct": [
+    {
+      "function_name": "select_minimum_bandgap_composition",
+      "function_description": "Replace the first-option composition with the exact minimum-bandgap composition stated by the source.",
+      "web_search_query": "Gryffin perovskites minimum bandgap optimum",
+      "helpful_web_documents": [
+        {
+          "web_search_query": "Gryffin perovskites minimum bandgap optimum",
+          "results": [
+            {
+              "id": "olympus_perovskites:gryffin_explicit_optimum",
+              "url": "https://raw.githubusercontent.com/aspuru-guzik-group/gryffin/fb149d18f9c81b96179cc682c46e05db60bc7229/docs/source/tutorials/perovskites.ipynb",
+              "title": "Gryffin official perovskites tutorial: explicit minimum-bandgap composition",
+              "content": "The tutorial identifies ['hydrazinium', 'I', 'Sn'] as the categorical options for the minimum bandgap in the dataset and gives the value as 1.5249 eV.",
+              "raw_content": "# the categorical options corresponding to the minimum bandgap in the dataset (optimum)\noptimum = ['hydrazinium', 'I', 'Sn'] # value = 1.5249 eV",
+              "raw_content_truncated": true,
+              "relevance_score": 1.0,
+              "helpfulness_score": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "inferential": [],
+  "insufficient": []
+}

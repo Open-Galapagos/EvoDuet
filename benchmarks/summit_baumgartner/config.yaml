@@ -1,0 +1,43 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+checkpoint_interval: 5
+max_solution_length: 40000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: gpt-5
+      weight: 1.0
+  max_tokens: 16384
+  timeout: 300
+prompt:
+  system_message: |
+    Optimize conditions for the published Summit aniline C-N cross-coupling
+    benchmark. Implement solve(payload), returning a dictionary with exactly:
+      catalyst: one of tBuXPhos, tBuBrettPhos, AlPhos
+      base: one of DBU, BTMG, TMG, TEA
+      base_equivalents: a number in [1.0, 2.5]
+      temperature: a number in [30.0, 100.0], degrees Celsius
+      t_res: a number in [60.0, 1800.0], seconds.
+    These options and bounds are also provided in payload.
+
+    Maximize predicted reaction yield. The evaluator uses Summit's fixed
+    pretrained five-member neural-network ensemble with one-hot categories
+    (use_descriptors=False) and yield as its only objective (include_cost=False).
+    Each member's prediction is clipped to [0, 1] before averaging, as in the
+    released implementation. combined_score is that mean predicted yield.
+    This evaluates a fixed virtual reaction, not experimental yield. Repeated
+    evaluation of the same conditions is deterministic. There are no hidden
+    instances. No training data or model weights are supplied to solve.
+
+    Return conditions, not claimed yields or scores. Out-of-range variables,
+    non-finite numbers, booleans and malformed outputs receive zero. Conditions
+    are not repaired or rounded. The candidate has 30 seconds and 2 GiB memory.
+    Preserve the solve signature and EVOLVE-BLOCK markers. Do not access model,
+    evaluator, reference, or oracle files, and do not use the network.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: false

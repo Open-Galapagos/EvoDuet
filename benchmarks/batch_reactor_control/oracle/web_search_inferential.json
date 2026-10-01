@@ -1,0 +1,22 @@
+[
+  {
+    "function_name": "batch_reactor_control",
+    "function_description": "Improve the task solution using the cited public evidence.",
+    "web_search_query": "APMonitor — Batch reactor control optimization excerpt",
+    "evidence_level": "inferential",
+    "response": {
+      "results": [
+        {
+          "title": "APMonitor — Batch reactor control optimization excerpt",
+          "content": "The example sets T.STATUS = 1, maximizes x2*final, sets IMODE = 6 and calls solve(). The page reports x2(tf) = 0.6108. This excerpt does not supply the resulting temperature trajectory.",
+          "raw_content": "T.STATUS = 1\n\nm.Maximize(x2*final)\n\nm.options.IMODE = 6\n\nm.solve()\n\nThe optimal objective value of the problem is x2(tf) = 0.6108.",
+          "raw_content_truncated": true,
+          "url": "https://www.apmonitor.com/wiki/index.php/Apps/BatchReactor",
+          "id": "batch_reactor_control:batch",
+          "relevance_score": 1.0,
+          "helpfulness_score": 1.0
+        }
+      ]
+    }
+  }
+]

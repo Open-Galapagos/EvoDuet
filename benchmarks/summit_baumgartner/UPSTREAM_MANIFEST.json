@@ -1,0 +1,65 @@
+{
+  "repository": "https://github.com/sustainable-processes/summit",
+  "commit": "1de682d05e97adcfb96cd8376e876cef2d6160d3",
+  "license": "MIT",
+  "variant": {
+    "use_descriptors": false,
+    "include_cost": false,
+    "clip": true
+  },
+  "files": [
+    {
+      "upstream_path": "LICENSE",
+      "retained_file": "data/SUMMIT_LICENSE",
+      "url": "https://raw.githubusercontent.com/sustainable-processes/summit/1de682d05e97adcfb96cd8376e876cef2d6160d3/LICENSE",
+      "sha256": "52d448fa6cec90f31e70259f1edfacbf15bb46a7e20f97ce94fdbc8f07744957"
+    },
+    {
+      "upstream_path": "summit/benchmarks/experimental_emulator.py",
+      "retained_file": "data/upstream_experimental_emulator.py",
+      "url": "https://raw.githubusercontent.com/sustainable-processes/summit/1de682d05e97adcfb96cd8376e876cef2d6160d3/summit/benchmarks/experimental_emulator.py",
+      "sha256": "516ffe7c6f598910c3e2c4618a10174edfbbab0587328431931929f1d1e15be2"
+    },
+    {
+      "upstream_path": "summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling.json",
+      "retained_file": "data/model.json",
+      "url": "https://raw.githubusercontent.com/sustainable-processes/summit/1de682d05e97adcfb96cd8376e876cef2d6160d3/summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling.json",
+      "sha256": "c626b784c90dc54adaf8b30c51482e9f311cde58d1befbc161bce40362b9c4ab"
+    },
+    {
+      "upstream_path": "summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_0.pt",
+      "retained_file": "data/baumgartner_aniline_cn_crosscoupling_predictor_0.pt",
+      "url": "https://raw.githubusercontent.com/sustainable-processes/summit/1de682d05e97adcfb96cd8376e876cef2d6160d3/summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_0.pt",
+      "sha256": "1858747922b27b3baf8b1ac3a0fa6227bc4716271a87072ee4e61dac6b465a0a"
+    },
+    {
+      "upstream_path": "summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_1.pt",
+      "retained_file": "data/baumgartner_aniline_cn_crosscoupling_predictor_1.pt",
+      "url": "https://raw.githubusercontent.com/sustainable-processes/summit/1de682d05e97adcfb96cd8376e876cef2d6160d3/summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_1.pt",
+      "sha256": "ec068f7041448c25f7f09d907febe8343e4fbe714a1e99d1e0c8f16aed956054"
+    },
+    {
+      "upstream_path": "summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_2.pt",
+      "retained_file": "data/baumgartner_aniline_cn_crosscoupling_predictor_2.pt",
+      "url": "https://raw.githubusercontent.com/sustainable-processes/summit/1de682d05e97adcfb96cd8376e876cef2d6160d3/summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_2.pt",
+      "sha256": "436049bbb012a13a116823781fa1e487dc835d8110b6b4f294c903eee86b74fd"
+    },
+    {
+      "upstream_path": "summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_3.pt",
+      "retained_file": "data/baumgartner_aniline_cn_crosscoupling_predictor_3.pt",
+      "url": "https://raw.githubusercontent.com/sustainable-processes/summit/1de682d05e97adcfb96cd8376e876cef2d6160d3/summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_3.pt",
+      "sha256": "6311a1991b15df956f924667feef6a158e10c6e4164718ae74f1779d9a643a4e"
+    },
+    {
+      "upstream_path": "summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_4.pt",
+      "retained_file": "data/baumgartner_aniline_cn_crosscoupling_predictor_4.pt",
+      "url": "https://raw.githubusercontent.com/sustainable-processes/summit/1de682d05e97adcfb96cd8376e876cef2d6160d3/summit/benchmarks/models/baumgartner_aniline_cn_crosscoupling/baumgartner_aniline_cn_crosscoupling_predictor_4.pt",
+      "sha256": "f430b3a0d477d9666b8e76d4d7895b75e0b98e2414fdc590f5e692fff873af21"
+    }
+  ],
+  "derived_weights": {
+    "retained_file": "data/weights.npz",
+    "sha256": "9440b42e2347771d97fd5e9ebf639bd53d6feeccb91774c1999c26e285311ff3",
+    "conversion": "Each torch.load(...,map_location=\"cpu\",weights_only=True) state tensor exported losslessly to NumPy float32; keys prefixed by ensemble member index."
+  }
+}

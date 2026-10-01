@@ -1,0 +1,45 @@
+{
+  "id": "1aaa9988-f544-4fb4-b82f-75023249e86b",
+  "generation": 0,
+  "iteration": 2,
+  "timestamp": 1789886031.4951131,
+  "parent_id": "acaa344a-6f6a-42b9-b13f-c0643b6b4533",
+  "metrics": {
+    "nmse": 2.0229573760662014e-05,
+    "nmae": 0.003954033083134143,
+    "r2": 0.9999797704262393,
+    "combined_score": 0.9999797704262393,
+    "posthoc_test_nmse": 2.5028631889245072e-05,
+    "posthoc_test_nmae": 0.004680375814803192,
+    "posthoc_test_r2": 0.9999749713681108,
+    "posthoc_test_combined_score": 0.9999749713681108
+  },
+  "language": "python",
+  "saved_at": 1789891899.4534216,
+  "posthoc_final_evaluation": {
+    "identity": {
+      "protocol": "simpletes-scaling-held-out-v1",
+      "task": "parallel_scaling_law",
+      "fit_split": "train",
+      "score_split": "test",
+      "random_state": 42,
+      "timeout": 3000,
+      "evaluator_sha256": "ba2981932ddccda0f5e807d3957fda2628cd1dc94e10118c4beafbdbc972a7e1",
+      "candidate_sha256": "af56d55174575c4a4550f77b57940d80a86614b58bf0e466328d38044e5041bd",
+      "best_id": "1aaa9988-f544-4fb4-b82f-75023249e86b",
+      "initial_sha256": "be98cc95f068db55ceaa8706c095d6803bed9f41026301e18831b8c68629ce1c"
+    },
+    "best_metrics": {
+      "posthoc_test_nmse": 2.5028631889245072e-05,
+      "posthoc_test_nmae": 0.004680375814803192,
+      "posthoc_test_r2": 0.9999749713681108,
+      "posthoc_test_combined_score": 0.9999749713681108
+    },
+    "initial_metrics": {
+      "posthoc_test_nmse": 0.0005590267313610145,
+      "posthoc_test_nmae": 0.019075369074854718,
+      "posthoc_test_r2": 0.999440973268639,
+      "posthoc_test_combined_score": 0.999440973268639
+    }
+  }
+}

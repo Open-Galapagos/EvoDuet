@@ -1,0 +1,18 @@
+{
+  "collection": "Fetched and read with the session web tool (web__run open); no LLM API or Tavily call.",
+  "scores": "Curator relevance/helpfulness labels; model improvement with document access has not been measured.",
+  "documents": [
+    {
+      "url": "https://www.feynmanlectures.caltech.edu/I_27.html#Eq:I:27:6",
+      "title": "The Feynman Lectures on Physics, Volume I, Chapter 27: Geometrical Optics",
+      "retrieval_mode": "web_tool_rendered_text",
+      "retrieval_date_utc": "2026-09-09",
+      "selection": "Complete displayed equation blocks, with web-tool line-number prefixes removed. Only selected equations and, for II.15, the short zero-constant phrase are retained; other page sections omitted.",
+      "retained_file": "source_excerpt.txt",
+      "raw_content_truncated": true,
+      "license": "Copyright Feynman/Leighton/Sands/Caltech; compact mathematical excerpts only, not a CC-licensed full-page redistribution.",
+      "metadata_note": "Direct HTTP requests returned 403. The web tool successfully retrieved the page text. No raw HTTP response hash or fetch timestamp is claimed.",
+      "raw_content_sha256": "cb6ecb1b3df46936051d278323934cb353394a6f22538b6b7c7c4d753184f8f2"
+    }
+  ]
+}

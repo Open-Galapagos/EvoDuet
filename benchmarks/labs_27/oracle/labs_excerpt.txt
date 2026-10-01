@@ -1,0 +1,15 @@
+NN
+EE
+FNF_{N}
+sequences
+skew
+
+27
+37
+9.851
+34313131211211
+×\times
+
+in
+run-length encoding, i.e. the digits specify the length of runs of
+equal spins.

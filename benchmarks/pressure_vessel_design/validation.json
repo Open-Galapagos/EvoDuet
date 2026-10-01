@@ -1,0 +1,70 @@
+{
+  "validation_date": "2026-09-09",
+  "programs": {
+    "initial": {
+      "combined_score": 0.5556650771491591,
+      "validity": 1.0,
+      "cost": 10905.3359375,
+      "volume": 1701696.0206944712,
+      "relative_cost_gap": 0.7996452199776565,
+      "max_constraint_violation": 0.0
+    },
+    "reference": {
+      "combined_score": 1.0,
+      "validity": 1.0,
+      "cost": 6059.714335048436,
+      "volume": 1296000.0,
+      "relative_cost_gap": 0.0,
+      "max_constraint_violation": 0.0
+    }
+  },
+  "invalid_outputs": {
+    "scalar_claimed_cost": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "solve(payload) must return [shell, head, radius, length]"
+    },
+    "wrong_length": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "solve(payload) must return [shell, head, radius, length]"
+    },
+    "boolean": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Every design variable must be a finite number, excluding bool"
+    },
+    "nonfinite": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Candidate exited 1: Traceback (most recent call last):\n  File \"<string>\", line 22, in <module>\n  File \"/usr/lib/python3.12/json/__init__.py\", line 179, in dump\n    for chunk in iterable:\n  File \"/usr/lib/python3.12/json/encoder.py\", line 430, in _iterencode\n    yield from _iterencode_list(o, _current_indent_level)\n  File \"/usr/lib/python3.12/json/encoder.py\", line 317, in _iterencode_list\n    yield buf + _floatstr(value)\n                ^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: nan"
+    },
+    "off_grid": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Thicknesses must be integer multiples of 0.0625 inches"
+    },
+    "inadequate_volume": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Infeasible design; maximum normalized violation=0.292980048382"
+    },
+    "stress_violation": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Infeasible design; maximum normalized violation=0.0625"
+    },
+    "length_limit": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Infeasible design; maximum normalized violation=10"
+    }
+  },
+  "invariants": {
+    "published_optimal_cost_error": 0.0
+  },
+  "config_loaded": true,
+  "outside_evolve_scaffold_identical": true,
+  "llm_evolution_run": false,
+  "document_gain_test_run": false
+}

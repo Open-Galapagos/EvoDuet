@@ -1,0 +1,2 @@
+This size is a magic number because it is possible to form a complete icosahedron, 
+which is the global minimum.

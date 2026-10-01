@@ -1,0 +1,170 @@
+{
+  "collection": "Direct HTTP fetch of upstream source and author documentation; no model or search API call.",
+  "documents": [
+    {
+      "id": "guacamol:standard_benchmarks.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/standard_benchmarks.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/standard_benchmarks.py",
+      "fetched_at": "2026-09-09T03:15:25.931687+00:00",
+      "http_status": 200,
+      "response_bytes": 21205,
+      "response_sha256": "02782338b20dedb5dd49b077dd9c6ce3322559eea5b7b050bcec4e5a98f3e085",
+      "retained_file": "source/upstream/standard_benchmarks.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:benchmark_suites.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/benchmark_suites.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/benchmark_suites.py",
+      "fetched_at": "2026-09-09T03:15:26.024202+00:00",
+      "http_status": 200,
+      "response_bytes": 6618,
+      "response_sha256": "5a837b25b468e0007093df88af231f608dc4d5dea8ce8df64a3d5dab259027a0",
+      "retained_file": "source/upstream/benchmark_suites.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:common_scoring_functions.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/common_scoring_functions.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/common_scoring_functions.py",
+      "fetched_at": "2026-09-09T03:15:25.929644+00:00",
+      "http_status": 200,
+      "response_bytes": 6529,
+      "response_sha256": "7cdcf144663499a3f8270dcca3d2b47be981238e48fada1a0b284d108cde352a",
+      "retained_file": "source/upstream/common_scoring_functions.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:goal_directed_benchmark.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/goal_directed_benchmark.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/goal_directed_benchmark.py",
+      "fetched_at": "2026-09-09T03:15:26.050245+00:00",
+      "http_status": 200,
+      "response_bytes": 5427,
+      "response_sha256": "266a7d5cd8c875aad4c1b51674eb3d41c022a4aa8fea8924cec986685fde15f5",
+      "retained_file": "source/upstream/goal_directed_benchmark.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:goal_directed_score_contributions.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/goal_directed_score_contributions.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/goal_directed_score_contributions.py",
+      "fetched_at": "2026-09-09T03:15:25.923255+00:00",
+      "http_status": 200,
+      "response_bytes": 2159,
+      "response_sha256": "554d063524e535d23714c1c4c5060a4b7e4756cf613e5e95b978779646e1c72c",
+      "retained_file": "source/upstream/goal_directed_score_contributions.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:score_modifier.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/score_modifier.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/score_modifier.py",
+      "fetched_at": "2026-09-09T03:15:25.943985+00:00",
+      "http_status": 200,
+      "response_bytes": 6418,
+      "response_sha256": "837876c6c7ddbe35b89796c86248244eefb2ec61baa387750d01daea583fad9b",
+      "retained_file": "source/upstream/score_modifier.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:scoring_function.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/scoring_function.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/scoring_function.py",
+      "fetched_at": "2026-09-09T03:15:25.929012+00:00",
+      "http_status": 200,
+      "response_bytes": 8273,
+      "response_sha256": "aa7edd8dcabd98a3799c5896da23e1ccf31e7dbd6dc7b4284c592db9a535207e",
+      "retained_file": "source/upstream/scoring_function.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:utils/descriptors.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/utils/descriptors.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/utils/descriptors.py",
+      "fetched_at": "2026-09-09T03:15:25.909598+00:00",
+      "http_status": 200,
+      "response_bytes": 1637,
+      "response_sha256": "63f5ae704b4786fefd458a1dd30e1fca0c9417b8ce02c697de6786e574e798b8",
+      "retained_file": "source/upstream/utils/descriptors.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:utils/chemistry.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/utils/chemistry.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/utils/chemistry.py",
+      "fetched_at": "2026-09-09T03:15:26.007015+00:00",
+      "http_status": 200,
+      "response_bytes": 11276,
+      "response_sha256": "f933811fadc3004dd7c1a709d173f8f2a377f01308dbefd1f8e45bffb46538f3",
+      "retained_file": "source/upstream/utils/chemistry.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:utils/math.py",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/utils/math.py",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/guacamol/utils/math.py",
+      "fetched_at": "2026-09-09T03:15:26.092260+00:00",
+      "http_status": 200,
+      "response_bytes": 388,
+      "response_sha256": "522d4b894049f16ae4422de714e82dbcf10844cc4313a38f484ef1f20e6638d9",
+      "retained_file": "source/upstream/utils/math.py",
+      "license": "MIT"
+    },
+    {
+      "id": "guacamol:LICENSE",
+      "url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/LICENSE",
+      "resolved_url": "https://raw.githubusercontent.com/BenevolentAI/guacamol/master/LICENSE",
+      "fetched_at": "2026-09-09T03:15:26.010523+00:00",
+      "http_status": 200,
+      "response_bytes": 1069,
+      "response_sha256": "b1964d554f45446206ca08c614bfdff0d471c503da6cd2aaf5dddc2e94d9ea80",
+      "retained_file": "source/upstream/LICENSE",
+      "license": "MIT"
+    },
+    {
+      "id": "maygen:README",
+      "url": "https://raw.githubusercontent.com/MehmetAzizYirik/MAYGEN/master/README.md",
+      "resolved_url": "https://raw.githubusercontent.com/MehmetAzizYirik/MAYGEN/master/README.md",
+      "fetched_at": "2026-09-09T03:15:26.055453+00:00",
+      "http_status": 200,
+      "response_bytes": 6768,
+      "response_sha256": "034bc7a98f5a663c0af325262b85ebde8f8e6dfac53e70e9eb40299c6011b953",
+      "retained_file": "oracle/sources/maygen_readme.md",
+      "license": "MIT"
+    },
+    {
+      "id": "maygen:LICENSE",
+      "url": "https://raw.githubusercontent.com/MehmetAzizYirik/MAYGEN/master/LICENSE",
+      "resolved_url": "https://raw.githubusercontent.com/MehmetAzizYirik/MAYGEN/master/LICENSE",
+      "fetched_at": "2026-09-09T03:15:26.076483+00:00",
+      "http_status": 200,
+      "response_bytes": 1074,
+      "response_sha256": "6fc3bca085d06e5ceec69bd5d3b3ad8760072a7fffa6622f06e1ad4ab13d570d",
+      "retained_file": "oracle/sources/MAYGEN_LICENSE",
+      "license": "MIT"
+    },
+    {
+      "id": "networkx:nonisomorphic_trees",
+      "url": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.3/networkx/generators/nonisomorphic_trees.py",
+      "resolved_url": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.3/networkx/generators/nonisomorphic_trees.py",
+      "fetched_at": "2026-09-09T03:15:26.056244+00:00",
+      "http_status": 200,
+      "response_bytes": 6453,
+      "response_sha256": "804eee3c1fae684eab11f6a29a647d6eaa1bb28e727257021babbccf06654b8f",
+      "retained_file": "oracle/sources/networkx_nonisomorphic_trees.py",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "id": "networkx:LICENSE",
+      "url": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.3/LICENSE.txt",
+      "resolved_url": "https://raw.githubusercontent.com/networkx/networkx/networkx-3.3/LICENSE.txt",
+      "fetched_at": "2026-09-09T03:15:26.242701+00:00",
+      "http_status": 200,
+      "response_bytes": 1763,
+      "response_sha256": "5b433b90f755eb9bbd06feff1d1a4f5f232c5208a185694199e45fa95d762792",
+      "retained_file": "oracle/sources/NETWORKX_LICENSE.txt",
+      "license": "BSD-3-Clause"
+    }
+  ]
+}

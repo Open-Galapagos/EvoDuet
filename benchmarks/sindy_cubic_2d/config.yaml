@@ -1,0 +1,34 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+llm:
+  models:
+    - name: gpt-5
+      weight: 1.0
+prompt:
+  system_message: |
+    Identify a compact polynomial dynamical model from the supplied noiseless
+    observations of a fixed two-state oscillator. Implement solve(payload).
+    payload.t contains 2500 times from 0 to 24.99, spaced by 0.01; payload.x
+    contains the corresponding two-state observations starting from [2,0].
+    Return exactly {"coefficients": [[10 numbers], [10 numbers]]}. Each row
+    represents one derivative; columns follow payload.powers, namely
+    [1, x, y, x^2, xy, y^2, x^3, x^2*y, x*y^2, y^3].
+    Coefficients must be finite and have absolute value at most 1e6.
+    The evaluator independently checks the vector field on a 25 by 25 grid
+    over [-2,2]^2 and simulates two new initial states [1.5,0.5] and [-1,0.75]
+    over [0,10]. Maximize combined_score = 1/(1 + (field_NRMSE + trajectory_NRMSE)/2).
+    Trajectory NRMSE is averaged across those two initial states. NRMSE divides
+    RMSE by RMS of the reference. Simulations leaving [-100,100]^2 or requiring
+    over 50000 RHS evaluations per trajectory are invalid.
+    The source task's system is fixed; the two validation trajectories and
+    this scalar score are introduced by this port. Use the supplied data to
+    fit the model. Do not read evaluator, oracle, or reference files, use
+    network access, or look up fixtures. NumPy and SciPy are available.
+    Preserve the EVOLVE-BLOCK markers.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: false

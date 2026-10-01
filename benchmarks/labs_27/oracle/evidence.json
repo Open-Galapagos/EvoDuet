@@ -1,0 +1,28 @@
+{
+  "direct": [
+    {
+      "function_name": "labs_27",
+      "function_description": "Improve the task solution using the cited public evidence.",
+      "web_search_query": "Packebusch and Mertens — LABS Table 1, N=27",
+      "helpful_web_documents": [
+        {
+          "web_search_query": "Packebusch and Mertens — LABS Table 1, N=27",
+          "results": [
+            {
+              "title": "Packebusch and Mertens — LABS Table 1, N=27",
+              "content": "Table 1 lists N=27, energy E=37, merit factor 9.851 and the sequence 34313131211211. The sequence is run-length encoded: the digits are lengths of successive runs of equal spins. The row is marked as skew-symmetric.",
+              "raw_content": "NN\nEE\nFNF_{N}\nsequences\nskew\n\n27\n37\n9.851\n34313131211211\n×\\times\n\nin\nrun-length encoding, i.e. the digits specify the length of runs of\nequal spins.",
+              "raw_content_truncated": true,
+              "url": "https://arxiv.org/html/1512.02475",
+              "id": "labs_27:labs",
+              "relevance_score": 1.0,
+              "helpfulness_score": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "inferential": [],
+  "insufficient": []
+}

@@ -1,0 +1,35 @@
+{
+  "validation_date_utc": "2026-09-09",
+  "python": "3.12.3",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "initial": {
+    "validity": 1.0,
+    "combined_score": 0.5770619467809873,
+    "final_B": 0.5770619467809873,
+    "final_A": 0.2402713359701045,
+    "final_C": 0.1826667172489081,
+    "mass_balance_error": 0.0,
+    "temperature_min": 350.0,
+    "temperature_max": 350.0
+  },
+  "reference": {
+    "validity": 1.0,
+    "combined_score": 0.6107841028214612,
+    "final_B": 0.6107841028214612,
+    "final_A": 0.29844947455954834,
+    "final_C": 0.09076642261899194,
+    "mass_balance_error": 1.5543122344752192e-15,
+    "temperature_min": 326.29082372223456,
+    "temperature_max": 398.0
+  },
+  "llm_oracle_effect_measured": false,
+  "file_sha256": {
+    "initial_program.py": "1e90350d1d27e4e8a946c17b36670fff52dadb71bc4b32b70443fe2da3d01fea",
+    "oracle/best_program.py": "3c850e630ad46cbfb3e59a97dc3045eb8e00b74459ef4475ccd63b9c8b93fc0d",
+    "evaluator.py": "03c7803de044d5c069fe8e2bbf37efd6614f57b3eb1435731895f7951faeb4d8"
+  },
+  "source_reported_B_rounded": 0.6108,
+  "unit_tests_passed": 3,
+  "strict_json_numeric_contract_tested": true
+}

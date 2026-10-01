@@ -1,0 +1,409 @@
+{
+  "id": "a425368e-b9f6-4abf-9420-2c2f363d3dca",
+  "generation": 0,
+  "iteration": 96,
+  "timestamp": 1789518592.6771612,
+  "parent_id": "678f141c-fe46-47c0-8ee4-d7cb75625483",
+  "metrics": {
+    "mse_raw": 0.16796179478890885,
+    "poisson_raw": 0.03675003597624765,
+    "mse_norm": 0.44880137965906897,
+    "poisson_norm": 0.977811172814575,
+    "poisson_pass": 1.0,
+    "validity": 1.0,
+    "eval_time": 14.568647384643555,
+    "combined_score": 0.44880137965906897,
+    "posthoc_pbmc_mse_raw": 0.15028665638775346,
+    "posthoc_pbmc_poisson_raw": 0.04924395705410943,
+    "posthoc_pbmc_mse_norm": 0.4453241197004799,
+    "posthoc_pbmc_poisson_norm": 0.9779079677741594,
+    "posthoc_pbmc_poisson_pass": 1.0,
+    "posthoc_pbmc_poisson_constraint_pass": 1.0,
+    "posthoc_pbmc_poisson_sanity_pass": 1.0,
+    "posthoc_pbmc_protocol_valid": 1.0,
+    "posthoc_pbmc_execution_valid": 1.0,
+    "posthoc_pbmc_mean_score": 0.7116160437373197,
+    "posthoc_pbmc_reported_score": 0.7116160437373197,
+    "posthoc_tabula_mse_raw": 0.13523467951928947,
+    "posthoc_tabula_poisson_raw": 0.029650839502244827,
+    "posthoc_tabula_mse_norm": 0.48336976761693035,
+    "posthoc_tabula_poisson_norm": 0.9850215807783406,
+    "posthoc_tabula_poisson_pass": 1.0,
+    "posthoc_tabula_poisson_constraint_pass": 1.0,
+    "posthoc_tabula_poisson_sanity_pass": 1.0,
+    "posthoc_tabula_protocol_valid": 1.0,
+    "posthoc_tabula_execution_valid": 1.0,
+    "posthoc_tabula_mean_score": 0.7341956741976354,
+    "posthoc_tabula_reported_score": 0.7341956741976354,
+    "posthoc_final_score": 0.7341956741976354,
+    "posthoc_final_valid": 1.0,
+    "posthoc_heldout_mean_score": 0.7229058589674775,
+    "posthoc_pbmc_completed": 1,
+    "posthoc_pbmc_protocol": "simpletes-denoising-paper-posthoc-v2",
+    "posthoc_pbmc_protocol_version": 2,
+    "posthoc_pbmc_candidate_sha256": "6dfe6028f7f4584dce801d2b4ee6c8c023a16003e19147557956171833202166",
+    "posthoc_tabula_completed": 1,
+    "posthoc_tabula_protocol": "simpletes-denoising-paper-posthoc-v2",
+    "posthoc_tabula_protocol_version": 2,
+    "posthoc_tabula_candidate_sha256": "6dfe6028f7f4584dce801d2b4ee6c8c023a16003e19147557956171833202166"
+  },
+  "language": "python",
+  "saved_at": 1789518927.849578,
+  "posthoc_final_evaluation": {
+    "schema_version": 1,
+    "protocol": {
+      "name": "simpletes-denoising-paper-posthoc-v2",
+      "paper_reporting": "per-dataset mean of normalized MSE and Poisson",
+      "headline_dataset": "tabula",
+      "search_dataset": "pancreas",
+      "held_out_datasets": [
+        "pbmc",
+        "tabula"
+      ],
+      "split_seed": 42,
+      "train_fraction": 0.9,
+      "candidate_random_state": 42,
+      "reconstruction_status": "Reconstructed from the SimpleTES constants and search evaluator; the authors did not publish their PBMC/Tabula final runner.",
+      "split_seed_evidence": "Seed 42 reproduces all six published PBMC/Tabula no-denoising and perfect-denoising constants within 5e-7 in this fixed image.",
+      "known_protocol_ambiguity": "The comparison TTT-Discover final notebook at commit 6c40e82dab9d5de7416ac873ad5cd3106084aaed uses its wrapper defaults (split seed 0 and no random_state keyword), whereas SimpleTES uses seed/random_state 42 during search.",
+      "simpletes_source_revision": "47d3413da1d85dc24341219d47452d2601e56a57",
+      "comparison_notebook_revision": "6c40e82dab9d5de7416ac873ad5cd3106084aaed",
+      "candidate_timeout_seconds_per_dataset": 7200,
+      "candidate_timeout_note": "Post-hoc safety cap; the reference search evaluator uses 400 seconds, but in this container/host audit the released paper program itself exceeded that on held-out Tabula.",
+      "reference_search_timeout_seconds": 400,
+      "container_memory_limit_bytes": 137438953472,
+      "paper_final_memory_limit": null,
+      "poisson_norm_constraint": {
+        "minimum": 0.97
+      },
+      "poisson_sanity_check": {
+        "minimum_raw": "published perfect_poisson (exact upstream threshold)",
+        "tolerance": 0.0
+      },
+      "normalization_baselines": "published SimpleTES evaluator constants",
+      "baseline_integrity_tolerance": 5e-07,
+      "raw_source_artifacts": {
+        "pbmc": {
+          "cache_file": "openproblems_02ad74d5ee9e6e5310c88a3a95e45a524f2a4a7a26a9c73b914584d61d3cb7ec.h5ad",
+          "bytes": 40065933,
+          "sha256": "c7c9ce59681be0906087d7ec02a9ebd9b5ec2225a28f7146303396458c6b78f8"
+        },
+        "tabula": {
+          "cache_file": "openproblems_b8b3b8e7299dbca6b07e921684c551520db6f49f80828a5776aa29aaf5825de2.h5ad",
+          "bytes": 611348452,
+          "sha256": "f5523cc4c5aeff9cd92af9e40d594ef0904cd2d265de0a3121acf146e26ccf0a"
+        }
+      },
+      "versions": {
+        "python": "3.12.14",
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "scanpy": "1.11.5",
+        "anndata": "0.12.7",
+        "scprep": "1.1.0",
+        "graphtools": "2.1.0",
+        "magic-impute": "3.0.0",
+        "molecular-cross-validation": "0.1",
+        "openproblems": "0.7.0",
+        "scikit-learn": "1.8.0"
+      },
+      "package_provenance": {
+        "molecular-cross-validation": {
+          "url": "https://github.com/czbiohub/molecular-cross-validation.git",
+          "vcs_info": {
+            "vcs": "git",
+            "commit_id": "04d9df0e59a247200153b3ce38952a086169769f"
+          }
+        },
+        "openproblems": {
+          "url": "file:///opt/simpletes/datasets/open_problems_bio/openproblems",
+          "dir_info": {
+            "editable": true
+          }
+        }
+      },
+      "container_image_id": "sha256:0440c4a8fe57e9c7d14ac9e59e57d605f7fcef4c8cc180737245558266ce356d"
+    },
+    "aggregate_result": "/home/youngjunlee/workspace/open_scientific_discovery/skydiscover/outputs_v2/denoising/openevolve_native_simpletes_umn_gatellm_ours_v7_no_summary_selective_parallel_g8_tavily_on_demand_evolution_query_observed_r3_d5_docs3/individual/gpt-5.6-luna-1.0/updated_1_42_0.7_32768_0.95_medium_full_rewrite/denoising_final_evaluation/a4f425f2b2f235b979807d4a9ad309537a712adfd2d7cbb15f6a731ed52a7ed7/results.json",
+    "candidate_sha256": "6dfe6028f7f4584dce801d2b4ee6c8c023a16003e19147557956171833202166",
+    "datasets": {
+      "pbmc": {
+        "status": "success",
+        "execution_valid": true,
+        "valid": true,
+        "evaluated_at": "2026-09-18T05:49:09.892188+00:00",
+        "candidate_seconds": 7.293032296933234,
+        "within_reference_search_budget": true,
+        "metric_seconds": 0.475487207993865,
+        "peak_rss_bytes": 2650357760,
+        "timeout_seconds": 7200,
+        "mse_raw": 0.15028665638775346,
+        "poisson_raw": 0.04924395705410943,
+        "mse_norm_unclipped": 0.4453241197004799,
+        "mse_norm": 0.4453241197004799,
+        "poisson_norm": 0.9779079677741594,
+        "mean_score": 0.7116160437373197,
+        "poisson_pass": true,
+        "poisson_constraint_pass": true,
+        "poisson_sanity_pass": true,
+        "protocol_valid": true,
+        "reported_score": 0.7116160437373197,
+        "live_baseline_mse_norm": 0.445324522311671,
+        "live_baseline_poisson_norm": 0.9779086182990183,
+        "live_baseline_mean_score": 0.7116165703053446
+      },
+      "tabula": {
+        "status": "success",
+        "execution_valid": true,
+        "valid": true,
+        "evaluated_at": "2026-09-18T05:50:51.089285+00:00",
+        "candidate_seconds": 79.27544717025012,
+        "within_reference_search_budget": true,
+        "metric_seconds": 6.3634052043780684,
+        "peak_rss_bytes": 63317041152,
+        "timeout_seconds": 7200,
+        "mse_raw": 0.13523467951928947,
+        "poisson_raw": 0.029650839502244827,
+        "mse_norm_unclipped": 0.48336976761693035,
+        "mse_norm": 0.48336976761693035,
+        "poisson_norm": 0.9850215807783406,
+        "mean_score": 0.7341956741976354,
+        "poisson_pass": true,
+        "poisson_constraint_pass": true,
+        "poisson_sanity_pass": true,
+        "protocol_valid": true,
+        "reported_score": 0.7341956741976354,
+        "live_baseline_mse_norm": 0.4833691052685372,
+        "live_baseline_poisson_norm": 0.9850215705601567,
+        "live_baseline_mean_score": 0.734195337914347
+      }
+    },
+    "paper_reporting": {
+      "pbmc_score": 0.7116160437373197,
+      "tabula_score": 0.7341956741976354,
+      "headline_dataset": "tabula",
+      "headline_score": 0.7341956741976354,
+      "all_datasets_execution_valid": true,
+      "all_datasets_protocol_valid": true,
+      "all_datasets_valid": true
+    },
+    "appended_at": "2026-09-18T05:50:52.901966+00:00",
+    "note": "Reproducible held-out post-hoc evaluation. Existing test_* metrics are preserved legacy Pancreas re-evaluation values.",
+    "automation_settings": {
+      "protocol": "simpletes-denoising-paper-posthoc-v2",
+      "image": "skydiscover-open_problems_bio:latest",
+      "candidate_timeout": 7200,
+      "evaluator_sha256": "a9d6426c85e1e832a755b16154bace6633877c6e9388fc4c0c6044c8be21e60f",
+      "cpu_set": "30,31,32,33,34,35,36,37"
+    },
+    "report_aggregation": {
+      "metric": "posthoc_heldout_mean_score",
+      "datasets": [
+        "pbmc",
+        "tabula"
+      ],
+      "operation": "arithmetic mean of the two reported dataset scores",
+      "legacy_posthoc_final_score": "Tabula only"
+    },
+    "initial_sha256": "2f38bc429a7ec35af5f0e7f9c511be71e445879d3283a897cc5d71767bf97abf",
+    "initial_automation_settings": {
+      "protocol": "simpletes-denoising-paper-posthoc-v2",
+      "image": "skydiscover-open_problems_bio:latest",
+      "candidate_timeout": 7200,
+      "evaluator_sha256": "a9d6426c85e1e832a755b16154bace6633877c6e9388fc4c0c6044c8be21e60f",
+      "cpu_set": "30,31,32,33,34,35,36,37"
+    },
+    "initial_evaluation": {
+      "schema_version": 1,
+      "protocol": {
+        "name": "simpletes-denoising-paper-posthoc-v2",
+        "paper_reporting": "per-dataset mean of normalized MSE and Poisson",
+        "headline_dataset": "tabula",
+        "search_dataset": "pancreas",
+        "held_out_datasets": [
+          "pbmc",
+          "tabula"
+        ],
+        "split_seed": 42,
+        "train_fraction": 0.9,
+        "candidate_random_state": 42,
+        "reconstruction_status": "Reconstructed from the SimpleTES constants and search evaluator; the authors did not publish their PBMC/Tabula final runner.",
+        "split_seed_evidence": "Seed 42 reproduces all six published PBMC/Tabula no-denoising and perfect-denoising constants within 5e-7 in this fixed image.",
+        "known_protocol_ambiguity": "The comparison TTT-Discover final notebook at commit 6c40e82dab9d5de7416ac873ad5cd3106084aaed uses its wrapper defaults (split seed 0 and no random_state keyword), whereas SimpleTES uses seed/random_state 42 during search.",
+        "simpletes_source_revision": "47d3413da1d85dc24341219d47452d2601e56a57",
+        "comparison_notebook_revision": "6c40e82dab9d5de7416ac873ad5cd3106084aaed",
+        "candidate_timeout_seconds_per_dataset": 7200,
+        "candidate_timeout_note": "Post-hoc safety cap; the reference search evaluator uses 400 seconds, but in this container/host audit the released paper program itself exceeded that on held-out Tabula.",
+        "reference_search_timeout_seconds": 400,
+        "container_memory_limit_bytes": 137438953472,
+        "paper_final_memory_limit": null,
+        "poisson_norm_constraint": {
+          "minimum": 0.97
+        },
+        "poisson_sanity_check": {
+          "minimum_raw": "published perfect_poisson (exact upstream threshold)",
+          "tolerance": 0.0
+        },
+        "normalization_baselines": "published SimpleTES evaluator constants",
+        "baseline_integrity_tolerance": 5e-07,
+        "raw_source_artifacts": {
+          "pbmc": {
+            "cache_file": "openproblems_02ad74d5ee9e6e5310c88a3a95e45a524f2a4a7a26a9c73b914584d61d3cb7ec.h5ad",
+            "bytes": 40065933,
+            "sha256": "c7c9ce59681be0906087d7ec02a9ebd9b5ec2225a28f7146303396458c6b78f8"
+          },
+          "tabula": {
+            "cache_file": "openproblems_b8b3b8e7299dbca6b07e921684c551520db6f49f80828a5776aa29aaf5825de2.h5ad",
+            "bytes": 611348452,
+            "sha256": "f5523cc4c5aeff9cd92af9e40d594ef0904cd2d265de0a3121acf146e26ccf0a"
+          }
+        },
+        "versions": {
+          "python": "3.12.14",
+          "numpy": "2.3.5",
+          "scipy": "1.17.0",
+          "scanpy": "1.11.5",
+          "anndata": "0.12.7",
+          "scprep": "1.1.0",
+          "graphtools": "2.1.0",
+          "magic-impute": "3.0.0",
+          "molecular-cross-validation": "0.1",
+          "openproblems": "0.7.0",
+          "scikit-learn": "1.8.0"
+        },
+        "package_provenance": {
+          "molecular-cross-validation": {
+            "url": "https://github.com/czbiohub/molecular-cross-validation.git",
+            "vcs_info": {
+              "vcs": "git",
+              "commit_id": "04d9df0e59a247200153b3ce38952a086169769f"
+            }
+          },
+          "openproblems": {
+            "url": "file:///opt/simpletes/datasets/open_problems_bio/openproblems",
+            "dir_info": {
+              "editable": true
+            }
+          }
+        },
+        "container_image_id": "sha256:0440c4a8fe57e9c7d14ac9e59e57d605f7fcef4c8cc180737245558266ce356d"
+      },
+      "aggregate_result": "/home/youngjunlee/workspace/open_scientific_discovery/skydiscover/new_analysis/results/final_evaluator_refresh_20260918/caches/denoising_3/initial-1003/590a64b653c606fab87cf5f28abe56724baaee072bdf14b45b6cbff2e72e30aa/denoising_final_evaluation/81842ebc2633795dbe52c70a7a91886b8b3592e80e8f225655f94886f4b6ba68/results.json",
+      "candidate_sha256": "2f38bc429a7ec35af5f0e7f9c511be71e445879d3283a897cc5d71767bf97abf",
+      "datasets": {
+        "pbmc": {
+          "status": "success",
+          "execution_valid": true,
+          "valid": true,
+          "evaluated_at": "2026-09-18T05:25:07.991522+00:00",
+          "candidate_seconds": 8.808132984675467,
+          "within_reference_search_budget": true,
+          "metric_seconds": 0.433731434866786,
+          "peak_rss_bytes": 753393664,
+          "timeout_seconds": 7200,
+          "mse_raw": 0.18812379376188382,
+          "poisson_raw": 0.04933668651623115,
+          "mse_norm_unclipped": 0.3056753445832777,
+          "mse_norm": 0.3056753445832777,
+          "poisson_norm": 0.9775469813832591,
+          "mean_score": 0.6416111629832684,
+          "poisson_pass": true,
+          "poisson_constraint_pass": true,
+          "poisson_sanity_pass": true,
+          "protocol_valid": true,
+          "reported_score": 0.6416111629832684,
+          "live_baseline_mse_norm": 0.30567584855845753,
+          "live_baseline_poisson_norm": 0.9775476313330578,
+          "live_baseline_mean_score": 0.6416117399457577
+        },
+        "tabula": {
+          "status": "success",
+          "execution_valid": true,
+          "valid": true,
+          "evaluated_at": "2026-09-18T05:25:53.330478+00:00",
+          "candidate_seconds": 22.395548419095576,
+          "within_reference_search_budget": true,
+          "metric_seconds": 6.823715523816645,
+          "peak_rss_bytes": 12947001344,
+          "timeout_seconds": 7200,
+          "mse_raw": 0.1837401975828778,
+          "poisson_raw": 0.02970277388080289,
+          "mse_norm_unclipped": 0.2980665809038031,
+          "mse_norm": 0.2980665809038031,
+          "poisson_norm": 0.9847323832654742,
+          "mean_score": 0.6413994820846387,
+          "poisson_pass": true,
+          "poisson_constraint_pass": true,
+          "poisson_sanity_pass": true,
+          "protocol_valid": true,
+          "reported_score": 0.6413994820846387,
+          "live_baseline_mse_norm": 0.2980656809865256,
+          "live_baseline_poisson_norm": 0.984732373618602,
+          "live_baseline_mean_score": 0.6413990273025638
+        }
+      },
+      "paper_reporting": {
+        "pbmc_score": 0.6416111629832684,
+        "tabula_score": 0.6413994820846387,
+        "headline_dataset": "tabula",
+        "headline_score": 0.6413994820846387,
+        "all_datasets_execution_valid": true,
+        "all_datasets_protocol_valid": true,
+        "all_datasets_valid": true
+      },
+      "appended_at": "2026-09-18T05:25:54.419046+00:00",
+      "note": "Reproducible held-out post-hoc evaluation. Existing test_* metrics are preserved legacy Pancreas re-evaluation values.",
+      "automation_settings": {
+        "protocol": "simpletes-denoising-paper-posthoc-v2",
+        "image": "skydiscover-open_problems_bio:latest",
+        "candidate_timeout": 7200,
+        "evaluator_sha256": "a9d6426c85e1e832a755b16154bace6633877c6e9388fc4c0c6044c8be21e60f",
+        "cpu_set": "30,31,32,33,34,35,36,37"
+      },
+      "report_aggregation": {
+        "metric": "posthoc_heldout_mean_score",
+        "datasets": [
+          "pbmc",
+          "tabula"
+        ],
+        "operation": "arithmetic mean of the two reported dataset scores",
+        "legacy_posthoc_final_score": "Tabula only"
+      }
+    },
+    "initial_metrics": {
+      "posthoc_pbmc_completed": 1,
+      "posthoc_pbmc_protocol": "simpletes-denoising-paper-posthoc-v2",
+      "posthoc_pbmc_protocol_version": 2,
+      "posthoc_pbmc_candidate_sha256": "2f38bc429a7ec35af5f0e7f9c511be71e445879d3283a897cc5d71767bf97abf",
+      "posthoc_pbmc_mse_raw": 0.18812379376188382,
+      "posthoc_pbmc_poisson_raw": 0.04933668651623115,
+      "posthoc_pbmc_mse_norm": 0.3056753445832777,
+      "posthoc_pbmc_poisson_norm": 0.9775469813832591,
+      "posthoc_pbmc_poisson_pass": 1.0,
+      "posthoc_pbmc_poisson_constraint_pass": 1.0,
+      "posthoc_pbmc_poisson_sanity_pass": 1.0,
+      "posthoc_pbmc_protocol_valid": 1.0,
+      "posthoc_pbmc_execution_valid": 1.0,
+      "posthoc_pbmc_mean_score": 0.6416111629832684,
+      "posthoc_pbmc_reported_score": 0.6416111629832684,
+      "posthoc_tabula_completed": 1,
+      "posthoc_tabula_protocol": "simpletes-denoising-paper-posthoc-v2",
+      "posthoc_tabula_protocol_version": 2,
+      "posthoc_tabula_candidate_sha256": "2f38bc429a7ec35af5f0e7f9c511be71e445879d3283a897cc5d71767bf97abf",
+      "posthoc_tabula_mse_raw": 0.1837401975828778,
+      "posthoc_tabula_poisson_raw": 0.02970277388080289,
+      "posthoc_tabula_mse_norm": 0.2980665809038031,
+      "posthoc_tabula_poisson_norm": 0.9847323832654742,
+      "posthoc_tabula_poisson_pass": 1.0,
+      "posthoc_tabula_poisson_constraint_pass": 1.0,
+      "posthoc_tabula_poisson_sanity_pass": 1.0,
+      "posthoc_tabula_protocol_valid": 1.0,
+      "posthoc_tabula_execution_valid": 1.0,
+      "posthoc_tabula_mean_score": 0.6413994820846387,
+      "posthoc_tabula_reported_score": 0.6413994820846387,
+      "posthoc_final_score": 0.6413994820846387,
+      "posthoc_final_valid": 1.0,
+      "posthoc_heldout_mean_score": 0.6415053225339535
+    }
+  }
+}

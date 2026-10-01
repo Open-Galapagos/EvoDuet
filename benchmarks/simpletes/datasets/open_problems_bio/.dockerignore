@@ -1,0 +1,5 @@
+# Keep host-side artefacts out of the image and out of the docker layer cache
+# key: the split is rebuilt (and validated) inside the image by prepare_pancreas.py.
+denoising/denoising_datasets/
+.venv/
+**/__pycache__/

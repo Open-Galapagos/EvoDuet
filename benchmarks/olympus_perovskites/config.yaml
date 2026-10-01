@@ -1,0 +1,39 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+checkpoint_interval: 5
+max_solution_length: 40000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: gpt-5
+      weight: 1.0
+  max_tokens: 16384
+  timeout: 300
+prompt:
+  system_message: |
+    Improve a program for the existing OLYMPUS perovskites benchmark.
+    Implement solve(payload), returning exactly a JSON-compatible object with
+    organic, cation and anion keys. Each value must be one of the category-name
+    strings in payload.parameters. There are 16 organic options, 3 group-IV
+    metal cations, and 4 halide anions: all 192 combinations are valid.
+
+    Choose the composition with the lowest HSE06 bandgap in electron volts in
+    the fixed published dataset. This is composition selection, not a new DFT
+    calculation or a bandgap prediction task. The same fixed dataset is scored
+    every time, with no measurement noise and no hidden instances.
+
+    The evaluator independently retrieves the stored bandgap from the returned
+    composition. Valid outputs receive a score increasing as bandgap decreases;
+    malformed outputs and unknown categories receive zero. Do not return a
+    claimed bandgap, score, array index, extra fields, or booleans.
+    The payload contains the allowed choices and objective metadata only.
+    The candidate has 30 seconds, one numerical-library thread, and 2 GiB of
+    memory. Keep solve(payload) and the EVOLVE-BLOCK markers. Do not read the
+    evaluator's data table, evaluator, reference program or oracle files.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: false

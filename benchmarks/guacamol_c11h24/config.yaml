@@ -1,0 +1,46 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+checkpoint_interval: 5
+max_solution_length: 40000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: gpt-5
+      weight: 1.0
+  max_tokens: 16384
+  timeout: 300
+prompt:
+  system_message: |
+    Improve a molecular generator for the C11H24 task from GuacaMol v2.
+    Implement solve(payload), returning a JSON-compatible list of SMILES strings.
+    The fixed goal is to generate 159 distinct molecules matching formula C11H24.
+    The same public instance is evaluated each time; there are no hidden cases.
+
+    The evaluator uses RDKit to canonicalize SMILES with isomericSmiles=False,
+    so stereochemistry and isotope labels do not distinguish returned molecules.
+    Invalid SMILES are removed and canonical duplicates count only once.
+    Each remaining molecule receives the original GuacaMol formula score:
+      gC = exp(-0.5*((number_of_C_atoms - 11)/1)**2)
+      gH = exp(-0.5*((number_of_H_atoms - 24)/1)**2)
+      gN = exp(-0.5*((total_number_of_atoms - 35)/2)**2)
+      molecule_score = (gC*gH*gN)**(1/3).
+    Hydrogens include implicit hydrogens, added using RDKit Chem.AddHs.
+    The final score is sum(top 159 molecule scores)/159: missing molecules
+    contribute zero. Thus repeating a good SMILES does not improve the score,
+    and a smaller number of exact-formula molecules leaves room to improve.
+    Formula mismatches receive partial credit. No extra connectivity, charge,
+    drug-likeness, stability, or synthesis constraints are imposed.
+
+    Return a Python list of strings, at most 10000 entries and 4096 characters
+    per entry. Numeric, boolean, nested, or otherwise malformed entries make
+    the output invalid. RDKit and NetworkX are installed. The candidate has
+    30 seconds, one numerical-library thread, and 2 GiB memory. Keep the solve
+    signature and EVOLVE-BLOCK markers. Generate from public task data; do not
+    read evaluator, source snapshots, reference, or oracle files.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: false

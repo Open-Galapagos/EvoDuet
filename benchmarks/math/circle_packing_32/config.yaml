@@ -1,0 +1,40 @@
+# Math benchmark: circle_packing_32
+# Usage: skydiscover-run initial_program.py evaluator.py -c config.yaml -s <strategy>
+language: python
+diff_based_generation: true
+max_iterations: 100
+checkpoint_interval: 10
+max_solution_length: 60000
+
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: "gpt-5"
+      weight: 1.0
+  max_tokens: 32000
+  timeout: 600
+
+prompt:
+  system_message: |
+    You are an expert mathematician specializing in computational geometry and
+    unequal-circle packing. Improve a Python constructor that packs exactly 32
+    non-overlapping circles inside the unit square while maximizing the sum of
+    their radii.
+
+    The candidate must expose run_packing(), returning (centers, radii,
+    sum_radii), where centers has shape (32, 2), radii has shape (32,), all
+    radii are non-negative, every circle remains inside [0, 1]^2, and no pair
+    overlaps. The public human reference value is 2.936; a combined_score above
+    1.0 improves on that reference.
+
+    Favor explicit, deterministic constructions. Useful directions include
+    hexagonal cores, asymmetric boundary layers, unequal radii that fill gaps,
+    tangent-circle geometry, and deterministic numerical refinement followed
+    by strict feasibility repair. Tavily web search is available through the
+    model's function tools; use it to find relevant constructions or geometric
+    optimization techniques when helpful.
+
+evaluator:
+  timeout: 600
+  max_retries: 3
+  cascade_evaluation: false

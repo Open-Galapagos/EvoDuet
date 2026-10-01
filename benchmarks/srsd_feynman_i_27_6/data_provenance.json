@@ -1,0 +1,91 @@
+{
+  "dataset": "yoshitomo-matsubara/srsd-feynman_easy",
+  "dataset_revision": "78a2026e61eaa000fb7ed5e30f0639329e912f9d",
+  "dataset_license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "authors": [
+    "Yoshitomo Matsubara",
+    "Naoya Chiba",
+    "Ryo Igarashi",
+    "Yoshitaka Ushiku"
+  ],
+  "paper_url": "https://data.mlr.press/assets/pdf/v01-3.pdf",
+  "code_repository": "https://github.com/omron-sinicx/srsd-benchmark",
+  "code_revision": "7d00b45d56250717ac08a256dc9f79b836d61027",
+  "equation_id": "feynman-i.27.6",
+  "modification": "Official numeric data bytes and splits retained unchanged; only filenames shortened to train/val/test.txt. Evaluator formula transcribed from source class.",
+  "files": [
+    {
+      "file": "data/train.txt",
+      "url": "https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy/resolve/78a2026e61eaa000fb7ed5e30f0639329e912f9d/train/feynman-i.27.6.txt",
+      "resolved_url": "https://huggingface.co/api/resolve-cache/datasets/yoshitomo-matsubara/srsd-feynman_easy/78a2026e61eaa000fb7ed5e30f0639329e912f9d/train%2Ffeynman-i.27.6.txt?%2Fdatasets%2Fyoshitomo-matsubara%2Fsrsd-feynman_easy%2Fresolve%2F78a2026e61eaa000fb7ed5e30f0639329e912f9d%2Ftrain%2Ffeynman-i.27.6.txt=&etag=%224c0413fd8c6ac326fee5f0186750f600a3fa65c1%22",
+      "retrieved_at_utc": "2026-09-09T03:14:03.323803+00:00",
+      "sha256": "56ca1898e4d8446e6d4f0853c6759e6cff7bfeecaa34d90c22b8f15454483914",
+      "bytes": 800000,
+      "rows": 8000
+    },
+    {
+      "file": "data/val.txt",
+      "url": "https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy/resolve/78a2026e61eaa000fb7ed5e30f0639329e912f9d/val/feynman-i.27.6.txt",
+      "resolved_url": "https://huggingface.co/api/resolve-cache/datasets/yoshitomo-matsubara/srsd-feynman_easy/78a2026e61eaa000fb7ed5e30f0639329e912f9d/val%2Ffeynman-i.27.6.txt?%2Fdatasets%2Fyoshitomo-matsubara%2Fsrsd-feynman_easy%2Fresolve%2F78a2026e61eaa000fb7ed5e30f0639329e912f9d%2Fval%2Ffeynman-i.27.6.txt=&etag=%22ff382ad8bbf4276d5995145f3d2555864c11f8cc%22",
+      "retrieved_at_utc": "2026-09-09T03:14:03.416137+00:00",
+      "sha256": "e74e94bf1a355205069923aca8fb5d6db701cdd10716e4fd651c44c632c395f6",
+      "bytes": 100000,
+      "rows": 1000
+    },
+    {
+      "file": "data/test.txt",
+      "url": "https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy/resolve/78a2026e61eaa000fb7ed5e30f0639329e912f9d/test/feynman-i.27.6.txt",
+      "resolved_url": "https://huggingface.co/api/resolve-cache/datasets/yoshitomo-matsubara/srsd-feynman_easy/78a2026e61eaa000fb7ed5e30f0639329e912f9d/test%2Ffeynman-i.27.6.txt?%2Fdatasets%2Fyoshitomo-matsubara%2Fsrsd-feynman_easy%2Fresolve%2F78a2026e61eaa000fb7ed5e30f0639329e912f9d%2Ftest%2Ffeynman-i.27.6.txt=&etag=%22ae7f98f62a433dfafdb6310c221a97219516591f%22",
+      "retrieved_at_utc": "2026-09-09T03:14:03.510694+00:00",
+      "sha256": "cf587f4827e0cf8e4365c83618d694aef58e7ef825ad37d7fa8c6829aa0777be",
+      "bytes": 100000,
+      "rows": 1000
+    },
+    {
+      "file": "source/DATASET_CARD.md",
+      "url": "https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy/resolve/78a2026e61eaa000fb7ed5e30f0639329e912f9d/README.md",
+      "sha256": "a6fcc8aa3fd49dbefb95001b41b3ef960cb3fb4baed1b34abe72c02f131b4255",
+      "bytes": 6535
+    },
+    {
+      "file": "source/equation_source.py",
+      "url": "https://raw.githubusercontent.com/omron-sinicx/srsd-benchmark/7d00b45d56250717ac08a256dc9f79b836d61027/datasets/feynman.py",
+      "extraction": "Complete class FeynmanICh27Eq6",
+      "response_sha256": "fd8fee3280a2a53143d892fbcdd3044cf2b4a04485c82aa2e80f76f44fdd4378",
+      "sha256": "95bab9fdd542c7179aceb094ea443a2e83850e7311b64aaa1266d793445a2dff"
+    },
+    {
+      "file": "source/eq_comparator.py",
+      "url": "https://raw.githubusercontent.com/omron-sinicx/srsd-benchmark/7d00b45d56250717ac08a256dc9f79b836d61027/eq_comparator.py",
+      "retrieved_at_utc": "2026-09-09T03:21:52.545336+00:00",
+      "sha256": "2a28c4304dfd28407316a7085500265bea1fde6a0da7135ef21cc02ad8191b05",
+      "bytes": 12322,
+      "license": "MIT"
+    },
+    {
+      "file": "source/eq_conversion.py",
+      "url": "https://raw.githubusercontent.com/omron-sinicx/srsd-benchmark/7d00b45d56250717ac08a256dc9f79b836d61027/eq/conversion.py",
+      "retrieved_at_utc": "2026-09-09T03:21:52.608737+00:00",
+      "sha256": "6f9d152188466a471325f07132c4021c2bc8714f3e8d1d37ff5a20bd486649fb",
+      "bytes": 3324,
+      "license": "MIT"
+    },
+    {
+      "file": "source/eq_eval.py",
+      "url": "https://raw.githubusercontent.com/omron-sinicx/srsd-benchmark/7d00b45d56250717ac08a256dc9f79b836d61027/eq/eval.py",
+      "retrieved_at_utc": "2026-09-09T03:21:52.658376+00:00",
+      "sha256": "845515c9fc646b2052664d53921f3c64c8856858aa17ef165f218acbce0c68e4",
+      "bytes": 2236,
+      "license": "MIT"
+    },
+    {
+      "file": "source/model_selector.py",
+      "url": "https://raw.githubusercontent.com/omron-sinicx/srsd-benchmark/7d00b45d56250717ac08a256dc9f79b836d61027/model_selector.py",
+      "retrieved_at_utc": "2026-09-09T03:21:52.548546+00:00",
+      "sha256": "ec8df96f33a68e6726f9b9cbadd151afa7445f363366cf69298ea68154575cc3",
+      "bytes": 5804,
+      "license": "MIT"
+    }
+  ]
+}

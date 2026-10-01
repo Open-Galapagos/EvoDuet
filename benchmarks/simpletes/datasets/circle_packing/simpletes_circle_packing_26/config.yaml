@@ -1,0 +1,25 @@
+# SimpleTES circle_packing/circle_packing_26 — ported verbatim from https://github.com/wq-will/SimpleTES (datasets/circle_packing/circle_packing_26)
+# Usage: skydiscover-run benchmarks/simpletes/datasets/circle_packing/simpletes_circle_packing_26/initial_program.py benchmarks/simpletes/datasets/circle_packing/simpletes_circle_packing_26/skydiscover_evaluator.py -c benchmarks/simpletes/datasets/circle_packing/simpletes_circle_packing_26/config.yaml -s <strategy>
+# prompt.system_message is the upstream circle_packing_26.txt byte-for-byte; see benchmarks/simpletes/README.md.
+language: python
+diff_based_generation: true
+max_iterations: 100
+checkpoint_interval: 10
+max_solution_length: 60000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: "gpt-5"
+      weight: 1.0
+  max_tokens: 32000
+  timeout: 600
+prompt:
+  system_message: |
+    Pack 26 circles in a unit square to maximize the sum of their radii.
+
+    Do this by evolving the code between # EVOLVE-BLOCK-START and # EVOLVE-BLOCK-END.
+    The time limit for each program evaluation is 530 seconds.
+evaluator:
+  timeout: 630
+  max_retries: 1
+  cascade_evaluation: false

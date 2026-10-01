@@ -1,0 +1,64 @@
+{
+  "validation_date": "2026-09-09",
+  "programs": {
+    "initial": {
+      "combined_score": 0.2791620950018603,
+      "validity": 1.0,
+      "energy": -12.374362631890557,
+      "energy_gap": 31.952438368109448,
+      "minimum_pair_distance": 1.122462048309373
+    },
+    "reference": {
+      "combined_score": 1.0,
+      "validity": 1.0,
+      "energy": -44.32680141953402,
+      "energy_gap": 0.0,
+      "minimum_pair_distance": 1.0818382885513658
+    }
+  },
+  "invalid_outputs": {
+    "scalar_claimed_energy": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "solve(payload) must return exactly 13 coordinate rows"
+    },
+    "wrong_atom_count": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "solve(payload) must return exactly 13 coordinate rows"
+    },
+    "wrong_row_length": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Each coordinate row must contain exactly three numbers"
+    },
+    "boolean": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Coordinates must be finite numbers, excluding bool"
+    },
+    "nonfinite": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Candidate exited 1: Traceback (most recent call last):\n  File \"<string>\", line 22, in <module>\n  File \"/usr/lib/python3.12/json/__init__.py\", line 179, in dump\n    for chunk in iterable:\n  File \"/usr/lib/python3.12/json/encoder.py\", line 430, in _iterencode\n    yield from _iterencode_list(o, _current_indent_level)\n  File \"/usr/lib/python3.12/json/encoder.py\", line 326, in _iterencode_list\n    yield from chunks\n  File \"/usr/lib/python3.12/json/encoder.py\", line 317, in _iterencode_list\n    yield buf + _floatstr(value)\n                ^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: inf"
+    },
+    "coincident": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "Every pair must have a finite, strictly positive squared distance"
+    },
+    "overflow": {
+      "combined_score": 0.0,
+      "validity": 0.0,
+      "error": "(34, 'Numerical result out of range')"
+    }
+  },
+  "invariants": {
+    "translation_rotation_permutation_energy_error": 0.0,
+    "published_six_decimal_energy_error": 4.195340181922802e-07
+  },
+  "config_loaded": true,
+  "outside_evolve_scaffold_identical": true,
+  "llm_evolution_run": false,
+  "document_gain_test_run": false
+}

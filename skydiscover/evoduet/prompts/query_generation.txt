@@ -1,0 +1,36 @@
+You are given an analysis of the current population, an analysis of your current knowledge state, the recent evolutionary history, the current parent program, and the existing search database.
+
+[Population State Analysis]
+{population_state_analysis}
+
+[Current Knowledge State: What You Know and What You Still Do Not Know]
+{knowledge_state_analysis}
+
+[Evolutionary History]
+{evolutionary_history}
+
+[Current Program]
+{current_program}
+
+[Search Database: Previous Queries, Documents, and Observed Outcomes]
+{search_database}
+
+Your task is to generate one useful web-search query to acquire knowledge that could help improve the current program. 
+
+- Use the knowledge-state analysis to identify what needs to be learned. Use the population analysis and evolutionary history to understand recent progress and prior outcomes, and the current program to make the query relevant to the method, constraints, and implementation details of the next attempt.
+- Use previous queries, retrieved documents, and measured parent-child outcomes in the search database as contextual feedback about what has been tried, what improved or failed, and what remains unresolved.
+- Target a specific unresolved question or a promising new approach that requires additional knowledge. 
+
+Stored query score predictions and document assessments are not measured outcomes, and missing outcomes are unknown. Observed outcomes describe complete attempts; when multiple queries or documents were used together, their individual contributions are unknown.
+
+## Output format
+Return exactly one JSON object with no additional commentary:
+```json
+{
+    "query": "<one concise web-search query>",
+    "keywords": ["<key term>", "<key term>"],
+    "resources": ["<one or more of: paper, github, blog, docs, forum>"],
+    "query_intent": "<the unresolved question or new approach this query explores>",
+    "rationale": "<what knowledge this query could provide and how it could help the next attempt>"
+}
+```

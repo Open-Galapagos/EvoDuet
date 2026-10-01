@@ -1,0 +1,30 @@
+{
+  "collection": "Direct HTTP fetch and deterministic excerpt extraction; no LLM or Tavily call.",
+  "scores": "Relevance/helpfulness fields are curator labels, not measured model benefit.",
+  "default_evidence_level": "inferential",
+  "documents": [
+    {
+      "url": "https://www.apmonitor.com/wiki/index.php/Apps/BatchReactor",
+      "resolved_url": null,
+      "fetched_at": null,
+      "retrieval_mode": "cache",
+      "cache_mtime_at": "2026-09-09T00:29:22.467228+00:00",
+      "metadata_note": "Cached response bytes do not preserve the HTTP fetch timestamp or redirect URL.",
+      "response_sha256": "cf4f3d80413f77f25e6d08c36d1e60ac050e9ac0afa946d7b4a591550fe61f4c",
+      "response_bytes": 68552,
+      "title": "APMonitor — Batch reactor control optimization excerpt",
+      "evidence_level": "inferential",
+      "retained_file": "batch_excerpt.txt",
+      "selection": "Four solver-configuration statements and the reported objective sentence. The complete linked page contains a direct worked program; this shorter replay is classified inferential because it omits that complete program and trajectory.",
+      "raw_content_sha256": "dd6ea0c10140608d8dcb6942a23572bf74f26b5796a5d276b4b4d33d4f92dc3b",
+      "excerpt_sha256": [
+        "9a9219a00189bcbb09df7edca5037125b093ffcaed142091a3dfdf24aa1dffb2",
+        "ab117c229b1844d461cc71de3c571b69ad0c26f6a411cf85c957ecbc952b8004",
+        "15b8bb7b618542e743ada5028d294b31f412475434b73d7ccadcfa26161d3192",
+        "5cf72ded322c9ec9e066dbdab9e6d7ee730d5a8f64ce9ee095ec0d614cf6f0fd",
+        "adc83305af4468fa4e70ca7dd68efc6958027a41c5b3232d8f9a9d7229ff2aa9"
+      ],
+      "raw_content_truncated": true
+    }
+  ]
+}

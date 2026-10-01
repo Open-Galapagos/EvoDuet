@@ -1,0 +1,29 @@
+{
+  "repository": "https://github.com/the-matter-lab/olympus",
+  "revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+  "upstream_task": "src/olympus/datasets/dataset_perovskites",
+  "native_evaluation": "Dataset(kind=\"perovskites\").run(composition, noiseless=True): exact table mean, without added noise.",
+  "files": {
+    "config.json": {
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_perovskites/config.json",
+      "resolved_url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_perovskites/config.json",
+      "fetched_at": "2026-09-09T03:16:52.987500+00:00",
+      "sha256": "460139af0c635df4ec6b28161facc64d66980843d1d244230b16c927a1b8d0bd",
+      "bytes": 1011
+    },
+    "data.csv": {
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_perovskites/data.csv",
+      "resolved_url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_perovskites/data.csv",
+      "fetched_at": "2026-09-09T03:16:52.988965+00:00",
+      "sha256": "ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+      "bytes": 5173
+    },
+    "OLYMPUS_LICENSE": {
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/LICENSE",
+      "resolved_url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/LICENSE",
+      "fetched_at": "2026-09-09T03:16:52.986594+00:00",
+      "sha256": "954c5cce3c2e24556ac14b940dfb071bc15947b03e9eb62acf4c7e7d1946f3f1",
+      "bytes": 1080
+    }
+  }
+}

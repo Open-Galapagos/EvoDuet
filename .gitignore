@@ -1,0 +1,107 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.claude/
+
+# OS
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Secrets
+.env
+secrets.yaml
+google_service_key.json
+*_service_key.json
+
+# Logs & outputs
+*.log
+*.jsonl
+output*/
+outputs*/
+outputs_*/
+
+
+# Benchmark generated data
+benchmarks/image_gen/sky_festival/sky_festival_output/
+benchmarks/image_gen/sky_festival/sky_festival_paradigm_output_*/
+benchmarks/frontier-cs-eval/Frontier-CS
+benchmarks/ADRS/eplb/expert-load.json
+benchmarks/ADRS/cloudcast/profiles/
+benchmarks/ADRS/cloudcast/examples/
+benchmarks/ADRS/llm_sql/datasets/
+
+# Generated test outputs (re-generate with test_all_benchmarks.sh)
+tests/**/test_outputs_*/
+
+# Evaluation run outputs
+eval_runs/
+/evaluation_reports/
+
+# Local documentation
+tasks/
+
+# Local generated artifacts
+/.gal_def.txt
+/.next/
+/next-env.d.ts
+/test-results/
+/vis.html
+/analysis/results/
+/analysis/trajectory_analysis_results/
+/analysis/failure_analysis_results/
+/analysis/skill_created/run_*/
+/trace-viewer/data/trace.json
+/benchmarks/ale_bench/ALE-Bench/
+
+# SimpleTES suite (benchmarks/simpletes): upstream's vendored OpenProblems library has a
+# tasks/ package that the "Local documentation" rule above would otherwise hide.
+!benchmarks/simpletes/datasets/open_problems_bio/openproblems/openproblems/tasks/
+# Data the SimpleTES families download or build locally (mirrors upstream's .gitignore)
+benchmarks/simpletes/datasets/astrodynamics/data/ephemerides/
+benchmarks/simpletes/datasets/scaling_law/.sldbench_cached
+benchmarks/simpletes/datasets/scaling_law/*/dataset/
+benchmarks/simpletes/datasets/open_problems_bio/denoising/denoising_datasets/
+benchmarks/simpletes/datasets/qubit_routing/*/rust/.cargo_target/
+benchmarks/simpletes/datasets/qubit_routing/*/rust/target/
+benchmarks/simpletes/checkpoints/
+benchmarks/simpletes/datasets/ahc/cache_ahc.zip
+benchmarks/simpletes/datasets/ahc/ale-bench.tar
+benchmarks/simpletes/datasets/ahc/ale_bench/
+
+# EvoDuet development release: credentials, local environments and run artifacts
+.env*
+!.env.example
+.venv*/
+.cache/
+.mypy_cache/
+.ruff_cache/
+*.pem
+*.key
+credentials.json
+credentials.yaml
+/logs/
+/analysis/
+/example_for_teaser_figure/
+/new_analysis/

@@ -1,0 +1,36 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+checkpoint_interval: 5
+max_solution_length: 40000
+llm:
+  api_base: https://api.openai.com/v1
+  models:
+    - name: gpt-5
+      weight: 1.0
+  max_tokens: 16384
+  timeout: 600
+prompt:
+  system_message: |
+    Optimize the public CSPLib Low Autocorrelation Binary Sequences problem
+    at the fixed length n=27 with nonperiodic (open) boundary conditions.
+    Implement solve(payload), where payload is {"n": 27}. Return a JSON list
+    of exactly 27 numeric signs, each -1 or +1. Boolean entries are invalid.
+
+    The evaluator computes C_k = sum(s_i * s_(i+k), i=0..26-k) for k=1..26,
+    and minimizes energy E = sum(C_k**2). Lower energy is better. The bounded
+    score is min(1, 37/E), and the actual energy and merit factor are reported.
+    The initial program selects the best of 32 reproducible random sequences.
+
+    This is one fixed public optimization instance. Every evaluation uses the
+    same objective; there is no held-out test set. Construct the sequence in
+    the program, preserving the solve signature and EVOLVE-BLOCK markers.
+    NumPy and SciPy are available. The program has 30 seconds per evaluation.
+    Do not read reference files, modify evaluator files, use network access,
+    or return a claimed score in place of a sequence.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: false

@@ -1,0 +1,29 @@
+{
+  "validation_date_utc": "2026-09-09",
+  "python": "3.12.3",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "initial": {
+    "validity": 1.0,
+    "combined_score": 0.5172071093220997,
+    "vector_field_nrmse": 0.6695886546587525,
+    "trajectory_nrmse": 1.1973342161838159,
+    "active_coefficients": 6
+  },
+  "reference": {
+    "validity": 1.0,
+    "combined_score": 0.9999463618218793,
+    "vector_field_nrmse": 4.565212539457985e-06,
+    "trajectory_nrmse": 0.00010271689811874448,
+    "active_coefficients": 4
+  },
+  "llm_oracle_effect_measured": false,
+  "file_sha256": {
+    "initial_program.py": "9671161706dc8aa7da8ff5e48686b8ae954d85aea93ecbfdb68c98e66ab38e3a",
+    "oracle/best_program.py": "aa62e8703bbe4a2279b2ee34ab2e73c520997b7ef92b1740d16101d20aaf4623",
+    "evaluator.py": "54a2bb0940d37e1741d99e31c62dae0bd40ed384ac6395b8a445f79badcc75bf",
+    "training_data.json": "3e412be68f498b1f623b45d91eeaafb8c05ddaf09b3efe59ebbe6f0263953b04"
+  },
+  "unit_tests_passed": 4,
+  "strict_json_numeric_contract_tested": true
+}

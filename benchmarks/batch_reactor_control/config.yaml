@@ -1,0 +1,32 @@
+language: python
+diff_based_generation: true
+max_iterations: 50
+max_parallel_iterations: 1
+llm:
+  models:
+    - name: gpt-5
+      weight: 1.0
+prompt:
+  system_message: |
+    Optimize the temperature of a fixed batch reactor to maximize the desired
+    intermediate product B at t=1. The reactions obey A'=-k1*A^2,
+    B'=k1*A^2-k2*B, C'=k2*B, with k1=4000*exp(-2500/T),
+    k2=620000*exp(-5000/T), and [A,B,C](0)=[1,0,0].
+    Implement solve(payload) returning exactly {"temperature": [501 numbers]}.
+    payload.time is the uniform grid linspace(0,1,501); temperature values
+    are kelvin in the closed interval [298,398]. The evaluator linearly
+    interpolates between consecutive temperature values and independently
+    integrates the ODE with an adaptive solver on every grid interval.
+    combined_score equals B(1), higher is better. Invalid shapes, nonfinite
+    values, or out-of-bound temperatures receive zero validity and score.
+    There is no slew-rate constraint or control-change penalty in this port.
+    The grid and interpolation are the port's explicit control representation.
+    payload also supplies initial_state, temperature_bounds, and kinetics.
+    NumPy and SciPy are available. Use calculations on the payload; do not
+    access evaluator, oracle, or reference files, network, or stored solutions.
+    Preserve the EVOLVE-BLOCK markers.
+evaluator:
+  timeout: 90
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  final_evaluation: false
